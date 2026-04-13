@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDVi - Personalized Telehealth Care</title>
+  <meta name="description" content="MEDVi offers personalized telehealth care with clinician-guided solutions for weight loss, skincare, hair loss, men's health, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__text">MEDV<span class="logo__accent">i</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#weight-loss" class="nav__link">Weight Loss</a></li>
+          <li class="nav__item"><a href="#meals" class="nav__link">Meals</a></li>
+          <li class="nav__item"><a href="#supplements" class="nav__link">Supplements</a></li>
+          <li class="nav__item"><a href="#hormones" class="nav__link">Hormones</a></li>
+          <li class="nav__item"><a href="#peptides" class="nav__link">Peptides</a></li>
+          <li class="nav__item"><a href="#hair" class="nav__link">Hair</a></li>
+          <li class="nav__item"><a href="#skincare" class="nav__link">Skincare</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a href="#" class="btn btn--outline btn--sm">Log In</a>
+        <a href="#quiz" class="btn btn--primary btn--sm">Take the Quiz</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          Personalized <span class="text-gradient">Telehealth</span> Care
+        </h1>
+        <p class="hero__subtitle">
+          Clinician-guided solutions for weight loss, skincare, hair loss, men's health, and more &mdash; designed to fit your life and deliver real results.
+        </p>
+        <div class="hero__cta">
+          <a href="#quiz" class="btn btn--primary btn--lg">Take the Quiz</a>
+          <a href="#how-it-works" class="btn btn--ghost btn--lg">How It Works</a>
+        </div>
+        <div class="hero__trust">
+          <div class="hero__trust-item">
+            <span class="hero__trust-number">500K+</span>
+            <span class="hero__trust-label">Patients</span>
+          </div>
+          <div class="hero__trust-divider"></div>
+          <div class="hero__trust-item">
+            <span class="hero__trust-number">50</span>
+            <span class="hero__trust-label">States</span>
+          </div>
+          <div class="hero__trust-divider"></div>
+          <div class="hero__trust-item">
+            <span class="hero__trust-number">15-20%</span>
+            <span class="hero__trust-label">Avg. Weight Loss</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__card hero__card--1">
+          <div class="hero__card-icon">&#9879;</div>
+          <span>Doctor-Led Care</span>
+        </div>
+        <div class="hero__card hero__card--2">
+          <div class="hero__card-icon">&#128218;</div>
+          <span>Personalized Plans</span>
+        </div>
+        <div class="hero__card hero__card--3">
+          <div class="hero__card-icon">&#128666;</div>
+          <span>Home Delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Services</span>
+        <h2 class="section-title">Doctor-Guided Care for Every Goal</h2>
+        <p class="section-desc">Personalized treatment plans designed to support your health through every stage of life.</p>
+      </div>
+      <div class="services__grid">
+        <a href="#weight-loss" class="service-card">
+          <div class="service-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 3v7l5 3"/></svg>
+          </div>
+          <h3 class="service-card__title">Weight Loss</h3>
+          <p class="service-card__desc">GLP-1 medication with ongoing clinical support for safe, steady weight loss.</p>
+          <span class="service-card__link">Learn more &rarr;</span>
+        </a>
+        <a href="#meals" class="service-card">
+          <div class="service-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3 class="service-card__title">MEDVi Meals</h3>
+          <p class="service-card__desc">Chef-prepared, medically aligned nutrition to lose fat while preserving muscle.</p>
+          <span class="service-card__link">Learn more &rarr;</span>
+        </a>
+        <a href="#supplements" class="service-card">
+          <div class="service-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+          </div>
+          <h3 class="service-card__title">Supplements</h3>
+          <p class="service-card__desc">Doctor-designed formulas with quality ingredients and evidence-based dosing.</p>
+          <span class="service-card__link">Learn more &rarr;</span>
+        </a>
+        <a href="#hormones" class="service-card">
+          <div class="service-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="service-card__title">Hormones</h3>
+          <p class="service-card__desc">Optimize hormones, energy, and performance with tailored treatment plans.</p>
+          <span class="service-card__link">Learn more &rarr;</span>
+        </a>
+        <a href="#peptides" class="service-card">
+          <div class="service-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3 class="service-card__title">Peptide Therapy</h3>
+          <p class="service-card__desc">Support recovery, strength, sleep, and overall optimization.</p>
+          <span class="service-card__link">Learn more &rarr;</span>
+        </a>
+        <a href="#hair" class="service-card">
+          <div class="service-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3 class="service-card__title">Hair Care</h3>
+          <p class="service-card__desc">Restore fuller-looking hair with our powerful hair regrowth serum.</p>
+          <span class="service-card__link">Learn more &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weight Loss Section -->
+  <section class="feature-section feature-section--dark" id="weight-loss">
+    <div class="container feature-section__inner">
+      <div class="feature-section__content">
+        <span class="section-tag">Weight Loss Program</span>
+        <h2 class="section-title section-title--light">It's Not Magic &mdash; It's Metabolic Science</h2>
+        <p class="section-desc section-desc--light">
+          GLP-1 is a naturally occurring hormone that regulates appetite and blood sugar, improving your metabolism and knocking out cravings. Our program combines prescription GLP-1 medication with ongoing clinical support.
+        </p>
+        <div class="feature-options">
+          <div class="feature-option">
+            <div class="feature-option__icon">&#128137;</div>
+            <div>
+              <h4>Weekly Injection</h4>
+              <p>One simple injection per week for steady results.</p>
+            </div>
+          </div>
+          <div class="feature-option">
+            <div class="feature-option__icon">&#128138;</div>
+            <div>
+              <h4>Daily Tablet</h4>
+              <p>One dissolvable tablet per day for convenient dosing.</p>
+            </div>
+          </div>
+        </div>
+        <a href="#quiz" class="btn btn--primary btn--lg">Get Started &mdash; $179/mo</a>
+      </div>
+      <div class="feature-section__visual">
+        <div class="weight-loss-card">
+          <div class="weight-loss-card__header">
+            <span class="weight-loss-card__badge">Most Popular</span>
+            <h3>Semaglutide</h3>
+          </div>
+          <div class="weight-loss-card__price">
+            <span class="weight-loss-card__amount">$179</span>
+            <span class="weight-loss-card__period">/first month</span>
+          </div>
+          <ul class="weight-loss-card__features">
+            <li>&#10003; Physician review</li>
+            <li>&#10003; Full personalized plan</li>
+            <li>&#10003; 1:1 guidance</li>
+            <li>&#10003; Metabolic report</li>
+            <li>&#10003; Prescription medication</li>
+            <li>&#10003; Home delivery</li>
+          </ul>
+          <a href="#quiz" class="btn btn--primary btn--block">Start Your Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simple Process</span>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-desc">Get started in three easy steps. Your prescription can be delivered within 24 hours of approval.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__number">1</div>
+          <div class="step__content">
+            <h3 class="step__title">Complete Your Online Evaluation</h3>
+            <p class="step__desc">Take a quick quiz that includes your health history, goals, and contact information so our team can assess the right plan for you.</p>
+          </div>
+        </div>
+        <div class="step__connector"></div>
+        <div class="step">
+          <div class="step__number">2</div>
+          <div class="step__content">
+            <h3 class="step__title">Get Reviewed & Approved</h3>
+            <p class="step__desc">Our team of licensed professionals reviews your information and provides approval quickly. Same-day consultations may be available.</p>
+          </div>
+        </div>
+        <div class="step__connector"></div>
+        <div class="step">
+          <div class="step__number">3</div>
+          <div class="step__content">
+            <h3 class="step__title">Receive Personalized Care</h3>
+            <p class="step__desc">Get your prescription delivered to your door with ongoing guidance, appointments, and unlimited messaging with your care team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meals Section -->
+  <section class="feature-section" id="meals">
+    <div class="container feature-section__inner feature-section__inner--reverse">
+      <div class="feature-section__content">
+        <span class="section-tag">MEDVi Meals</span>
+        <h2 class="section-title">The Perfect Partner for Your GLP-1 Journey</h2>
+        <p class="section-desc">
+          Chef-prepared, medically aligned nutrition designed to help you lose fat while preserving muscle. Every meal is crafted to complement your treatment plan and keep you fueled for life.
+        </p>
+        <ul class="feature-list">
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Nutritionist-designed meal plans
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            High protein, balanced macros
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Delivered fresh to your door
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Ready in minutes
+          </li>
+        </ul>
+        <a href="#quiz" class="btn btn--primary btn--lg">Explore Meals</a>
+      </div>
+      <div class="feature-section__visual">
+        <div class="meals-visual">
+          <div class="meals-visual__plate meals-visual__plate--1">
+            <div class="meals-visual__icon">&#127858;</div>
+            <span>Protein Bowl</span>
+          </div>
+          <div class="meals-visual__plate meals-visual__plate--2">
+            <div class="meals-visual__icon">&#129388;</div>
+            <span>Green Salad</span>
+          </div>
+          <div class="meals-visual__plate meals-visual__plate--3">
+            <div class="meals-visual__icon">&#127835;</div>
+            <span>Lean Grill</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supplements Section -->
+  <section class="feature-section feature-section--light" id="supplements">
+    <div class="container feature-section__inner">
+      <div class="feature-section__content">
+        <span class="section-tag">Supplements</span>
+        <h2 class="section-title">Doctor-Designed Formulas</h2>
+        <p class="section-desc">
+          Made with quality ingredients and evidence-based dosing to support your body day after day. Every formula is designed by physicians to complement your treatment plan.
+        </p>
+        <ul class="feature-list">
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Evidence-based ingredients
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Physician-formulated
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Third-party tested
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Optimized for your plan
+          </li>
+        </ul>
+        <a href="#quiz" class="btn btn--primary btn--lg">View Supplements</a>
+      </div>
+      <div class="feature-section__visual">
+        <div class="supplement-visual">
+          <div class="supplement-visual__bottle">
+            <div class="supplement-visual__cap"></div>
+            <div class="supplement-visual__body">
+              <span class="supplement-visual__label">MEDVi</span>
+              <span class="supplement-visual__name">Daily Essentials</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hormones Section -->
+  <section class="feature-section" id="hormones">
+    <div class="container feature-section__inner feature-section__inner--reverse">
+      <div class="feature-section__content">
+        <span class="section-tag">Hormone &amp; Performance</span>
+        <h2 class="section-title">Optimize Your Hormones, Energy &amp; Performance</h2>
+        <p class="section-desc">
+          Doctor-guided care for hormones, energy, and performance, with treatment plans tailored to your goals and adjusted as your body responds.
+        </p>
+        <ul class="feature-list">
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Comprehensive hormone panels
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Personalized optimization plans
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Ongoing monitoring &amp; adjustment
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Virtual consultations
+          </li>
+        </ul>
+        <a href="#quiz" class="btn btn--primary btn--lg">Get Started</a>
+      </div>
+      <div class="feature-section__visual">
+        <div class="hormone-visual">
+          <div class="hormone-visual__chart">
+            <div class="hormone-visual__bar hormone-visual__bar--1"></div>
+            <div class="hormone-visual__bar hormone-visual__bar--2"></div>
+            <div class="hormone-visual__bar hormone-visual__bar--3"></div>
+            <div class="hormone-visual__bar hormone-visual__bar--4"></div>
+            <div class="hormone-visual__bar hormone-visual__bar--5"></div>
+          </div>
+          <span class="hormone-visual__label">Optimized Levels</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Peptides Section -->
+  <section class="feature-section feature-section--light" id="peptides">
+    <div class="container feature-section__inner">
+      <div class="feature-section__content">
+        <span class="section-tag">Peptide Therapy</span>
+        <h2 class="section-title">Targeted Support for Recovery &amp; Performance</h2>
+        <p class="section-desc">
+          Peptide therapy is designed to support how your body recovers, performs, and repairs over time &mdash; with targeted options for goals like recovery, strength, sleep, and overall optimization.
+        </p>
+        <div class="peptide-tags">
+          <span class="peptide-tag">Recovery</span>
+          <span class="peptide-tag">Strength</span>
+          <span class="peptide-tag">Sleep</span>
+          <span class="peptide-tag">Anti-Aging</span>
+          <span class="peptide-tag">Performance</span>
+          <span class="peptide-tag">Immunity</span>
+        </div>
+        <a href="#quiz" class="btn btn--primary btn--lg">Explore Peptides</a>
+      </div>
+      <div class="feature-section__visual">
+        <div class="peptide-visual">
+          <div class="peptide-visual__molecule">
+            <div class="peptide-visual__atom peptide-visual__atom--1"></div>
+            <div class="peptide-visual__atom peptide-visual__atom--2"></div>
+            <div class="peptide-visual__atom peptide-visual__atom--3"></div>
+            <div class="peptide-visual__bond peptide-visual__bond--1"></div>
+            <div class="peptide-visual__bond peptide-visual__bond--2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hair Section -->
+  <section class="feature-section" id="hair">
+    <div class="container feature-section__inner feature-section__inner--reverse">
+      <div class="feature-section__content">
+        <span class="section-tag">Hair Care</span>
+        <h2 class="section-title">Revitalize Your Roots</h2>
+        <p class="section-desc">
+          Restore fuller-looking hair with our powerful hair regrowth serum, formulated to nourish the scalp and support visibly thicker, healthier strands.
+        </p>
+        <ul class="feature-list">
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Clinically-backed ingredients
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Nourishes scalp health
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Visible results in weeks
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Easy daily application
+          </li>
+        </ul>
+        <a href="#quiz" class="btn btn--primary btn--lg">Start Hair Treatment</a>
+      </div>
+      <div class="feature-section__visual">
+        <div class="hair-visual">
+          <div class="hair-visual__before">
+            <span>Before</span>
+          </div>
+          <div class="hair-visual__after">
+            <span>After</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skincare Section -->
+  <section class="feature-section feature-section--light" id="skincare">
+    <div class="container feature-section__inner">
+      <div class="feature-section__content">
+        <span class="section-tag">Skincare</span>
+        <h2 class="section-title">Care That Evolves With Your Skin</h2>
+        <p class="section-desc">
+          Address acne, aging, sensitivity, and texture with personalized skincare solutions that adapt to your skin's changing needs over time.
+        </p>
+        <ul class="feature-list">
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Personalized skin assessment
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Prescription-strength formulas
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Ongoing dermatology support
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check">&#10003;</span>
+            Adapts to your progress
+          </li>
+        </ul>
+        <a href="#quiz" class="btn btn--primary btn--lg">Start Skincare Plan</a>
+      </div>
+      <div class="feature-section__visual">
+        <div class="skincare-visual">
+          <div class="skincare-visual__drop skincare-visual__drop--1"></div>
+          <div class="skincare-visual__drop skincare-visual__drop--2"></div>
+          <div class="skincare-visual__drop skincare-visual__drop--3"></div>
+          <div class="skincare-visual__circle"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching / Support Section -->
+  <section class="support-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Ongoing Support</span>
+        <h2 class="section-title">Your Care Team, Always by Your Side</h2>
+        <p class="section-desc">MEDVi's care coaching team, led by certified medical assistants and registered dietitians, helps answer questions about medication, your program, and day-to-day lifestyle changes.</p>
+      </div>
+      <div class="support-grid">
+        <div class="support-card">
+          <div class="support-card__icon">&#128172;</div>
+          <h3>Unlimited Messaging</h3>
+          <p>Message your care team anytime with questions about your treatment or progress.</p>
+        </div>
+        <div class="support-card">
+          <div class="support-card__icon">&#128197;</div>
+          <h3>Regular Check-Ins</h3>
+          <p>Ongoing check-ins keep you connected and your plan on track as you progress.</p>
+        </div>
+        <div class="support-card">
+          <div class="support-card__icon">&#128105;&#8205;&#9877;&#65039;</div>
+          <h3>Expert Guidance</h3>
+          <p>Access certified medical assistants and registered dietitians whenever you need support.</p>
+        </div>
+        <div class="support-card">
+          <div class="support-card__icon">&#128187;</div>
+          <h3>Virtual Consultations</h3>
+          <p>Schedule appointments with your provider, with same-day availability when possible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pricing</span>
+        <h2 class="section-title">Transparent Pricing, No Contracts</h2>
+        <p class="section-desc">Your first month includes physician review, a full personalized plan, 1:1 guidance, metabolic report, and prescription medication shipped to your door.</p>
+      </div>
+      <div class="pricing__grid">
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <h3>Semaglutide Injection</h3>
+            <p>Weekly injection</p>
+          </div>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">$179</span>
+            <span class="pricing-card__period">/first month</span>
+          </div>
+          <p class="pricing-card__after">Then $299/month</p>
+          <ul class="pricing-card__features">
+            <li>&#10003; Physician review &amp; approval</li>
+            <li>&#10003; Personalized treatment plan</li>
+            <li>&#10003; Prescription medication</li>
+            <li>&#10003; Home delivery</li>
+            <li>&#10003; Ongoing clinical support</li>
+            <li>&#10003; Unlimited messaging</li>
+          </ul>
+          <a href="#quiz" class="btn btn--primary btn--block">Get Started</a>
+        </div>
+        <div class="pricing-card pricing-card--featured">
+          <div class="pricing-card__badge">Most Popular</div>
+          <div class="pricing-card__header">
+            <h3>Tirzepatide Injection</h3>
+            <p>Weekly injection</p>
+          </div>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">$279</span>
+            <span class="pricing-card__period">/first month</span>
+          </div>
+          <p class="pricing-card__after">Then $399/month</p>
+          <ul class="pricing-card__features">
+            <li>&#10003; Physician review &amp; approval</li>
+            <li>&#10003; Personalized treatment plan</li>
+            <li>&#10003; Prescription medication</li>
+            <li>&#10003; Home delivery</li>
+            <li>&#10003; Ongoing clinical support</li>
+            <li>&#10003; Unlimited messaging</li>
+            <li>&#10003; Priority support</li>
+          </ul>
+          <a href="#quiz" class="btn btn--primary btn--block">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__header">
+            <h3>Semaglutide Tablet</h3>
+            <p>Daily dissolvable tablet</p>
+          </div>
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount">$249</span>
+            <span class="pricing-card__period">/first month</span>
+          </div>
+          <p class="pricing-card__after">Then $369/month</p>
+          <ul class="pricing-card__features">
+            <li>&#10003; Physician review &amp; approval</li>
+            <li>&#10003; Personalized treatment plan</li>
+            <li>&#10003; Prescription medication</li>
+            <li>&#10003; Home delivery</li>
+            <li>&#10003; Ongoing clinical support</li>
+            <li>&#10003; Unlimited messaging</li>
+          </ul>
+          <a href="#quiz" class="btn btn--primary btn--block">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="quiz">
+    <div class="container cta-section__inner">
+      <h2 class="cta-section__title">Ready to Transform Your Health?</h2>
+      <p class="cta-section__desc">Join over 500,000 MEDVi patients and finally get real, lasting results. Take the quiz to find the right plan for you.</p>
+      <a href="#" class="btn btn--white btn--lg">Take the Quiz Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="logo">
+            <span class="logo__text logo__text--light">MEDV<span class="logo__accent">i</span></span>
+          </a>
+          <p class="footer__tagline">Personalized telehealth care with clinician-guided solutions designed to fit your life.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#weight-loss">Weight Loss</a></li>
+              <li><a href="#meals">MEDVi Meals</a></li>
+              <li><a href="#supplements">Supplements</a></li>
+              <li><a href="#hormones">Hormones</a></li>
+              <li><a href="#peptides">Peptide Therapy</a></li>
+              <li><a href="#hair">Hair Care</a></li>
+              <li><a href="#skincare">Skincare</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">How It Works</a></li>
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 MEDVi. All rights reserved.</p>
+        <p class="footer__disclaimer">Compounded GLP-1s are produced in FDA-regulated facilities. Although these facilities are highly regulated, the medications are not FDA-approved or evaluated for safety, efficacy, or quality. MEDVi is available in every state except North Dakota.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
