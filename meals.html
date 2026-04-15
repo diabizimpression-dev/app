@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDVi Meals &mdash; GLP-1 Meals. More Protein. Less Stress.</title>
+  <meta name="description" content="Chef-made, portion-controlled meals designed for GLP-1 patients. High-protein, goal-focused, fresh to your door.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/meals.css">
+</head>
+<body class="meals-page">
+
+  <!-- Top promo banner with countdown -->
+  <div class="promo-bar">
+    <div class="promo-bar__inner">
+      <span class="promo-bar__text">NEW ORDERING FOR SHIPMENT ON TUESDAY APRIL 15</span>
+      <div class="promo-bar__countdown" id="countdown">
+        <span><strong id="cd-h">25</strong><small>Hrs</small></span>
+        <span><strong id="cd-m">36</strong><small>Min</small></span>
+        <span><strong id="cd-s">35</strong><small>Sec</small></span>
+      </div>
+      <a href="#program" class="promo-bar__btn">Shop Now</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="m-header" id="header">
+    <div class="m-container m-header__inner">
+      <a href="#" class="m-logo" aria-label="MEDVi Meals">
+        <span class="m-logo__mark">M</span>
+      </a>
+      <nav class="m-nav" id="nav">
+        <ul>
+          <li><a href="#menu">WEEKLY MENU</a></li>
+          <li><a href="#program">PROGRAMS OFFERED</a></li>
+          <li><a href="#how">HOW IT WORKS</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="m-header__actions">
+        <a href="#" class="m-link-plain">LOGIN</a>
+        <a href="#program" class="m-btn m-btn--solid">Get Started</a>
+      </div>
+      <button class="m-hamb" id="hamb" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="m-hero">
+    <div class="m-container m-hero__inner">
+      <div class="m-hero__content">
+        <h2 class="m-hero__brand">MEDVi</h2>
+        <h1 class="m-hero__title">GLP-1 Meals. More Protein. Less Stress.</h1>
+        <p class="m-hero__sub">
+          Enjoy chef-made, portion-controlled meals that make staying on track simple. Get 35% off your first box + 20% off next month's meals.
+        </p>
+        <a href="#program" class="m-btn m-btn--solid m-btn--lg">Get Started</a>
+      </div>
+      <div class="m-hero__visual" aria-hidden="true">
+        <div class="m-hero__plate m-hero__plate--main">
+          <div class="m-hero__food">
+            <span class="m-food m-food--chicken"></span>
+            <span class="m-food m-food--veg1"></span>
+            <span class="m-food m-food--veg2"></span>
+            <span class="m-food m-food--side"></span>
+          </div>
+        </div>
+        <div class="m-hero__plate m-hero__plate--alt1">
+          <div class="m-hero__salad"></div>
+        </div>
+        <div class="m-hero__plate m-hero__plate--alt2">
+          <div class="m-hero__bowl"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="m-how" id="how">
+    <div class="m-container">
+      <div class="m-mini-logo">M</div>
+      <h2 class="m-section-title">FROM OUR KITCHEN TO YOUR DOOR,<br>HOW MEDVi MEALS WORKS</h2>
+      <p class="m-section-lead">Skip the hassle of meal planning and prepping. MEDVi Meals has you covered! We craft each meal to be lean, clean, and perfectly balanced, delivering top-tier nutrition and unbeatable flavor with every bite.</p>
+
+      <div class="m-how__grid">
+        <div class="m-how__card">
+          <svg class="m-how__icon" viewBox="0 0 64 64" fill="none" stroke="#2d5a3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="14" y="12" width="36" height="44" rx="3"/>
+            <path d="M20 22h24M20 30h24M20 38h16"/>
+            <path d="M44 46l3 3 6-7"/>
+          </svg>
+          <h3>SELECT YOUR<br>READY-TO-EAT MEALS</h3>
+          <p>Choose from dozens of chef-crafted meals, each portioned to support your goals.</p>
+        </div>
+        <div class="m-how__card">
+          <svg class="m-how__icon" viewBox="0 0 64 64" fill="none" stroke="#2d5a3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 48h40"/>
+            <path d="M16 48c0-9 7-16 16-16s16 7 16 16"/>
+            <path d="M32 28v-6"/>
+            <path d="M28 22h8"/>
+            <path d="M22 40c0-5 4-9 10-9"/>
+          </svg>
+          <h3>CHEF PREPARED,<br>DELIVERED FRESH TO YOU</h3>
+          <p>We prep, cook, then chill &mdash; your meals arrive fresh in sustainable insulated packaging.</p>
+        </div>
+        <div class="m-how__card">
+          <svg class="m-how__icon" viewBox="0 0 64 64" fill="none" stroke="#2d5a3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="32" cy="34" r="16"/>
+            <path d="M16 30c6-6 26-6 32 0"/>
+            <path d="M46 18l-6 6M18 18l6 6M32 14v6"/>
+          </svg>
+          <h3>JUST SERVE<br>&amp; ENJOY</h3>
+          <p>Heat in 3 minutes. No prep, no cleanup &mdash; just a complete, balanced meal.</p>
+        </div>
+      </div>
+
+      <div class="m-how__cta">
+        <a href="#program" class="m-btn m-btn--solid">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section class="m-menu" id="menu">
+    <div class="m-container">
+      <div class="m-mini-logo">M</div>
+      <h2 class="m-section-title">EXPLORE A MENU OF FRESH, LEAN, AND<br>GOAL-FOCUSED MEALS</h2>
+      <p class="m-section-lead">With over 100 chef-curated meals packed with real, clean food, MEDVi Meals offers freshness and features you won't find anywhere else. Every meal is perfectly portioned, nutritionally balanced, and macro-friendly, helping you stay true to the kitchen and stay focused on clean, goal-driven eating.</p>
+
+      <div class="m-menu__filters">
+        <button class="m-filter m-filter--active">ULTRA PREMIUM</button>
+        <button class="m-filter">EXTRA PROTEIN</button>
+        <button class="m-filter">NO CARB</button>
+        <button class="m-filter">TREATS</button>
+        <button class="m-filter">LOW CALORIES</button>
+        <button class="m-filter">GLUTEN FREE</button>
+        <button class="m-filter">DAIRY FREE</button>
+        <button class="m-filter">BREAKFAST</button>
+        <button class="m-filter">SEED OIL FREE</button>
+      </div>
+
+      <div class="m-menu__note">
+        <span class="m-menu__bookmark">&#10077;</span>
+        ONLY AVAILABLE IN PREMIUM PROGRAMS
+      </div>
+
+      <div class="m-menu__grid">
+        <article class="m-meal">
+          <div class="m-plate m-plate--pepper"></div>
+          <h4>Sweet Pepper Steak</h4>
+        </article>
+        <article class="m-meal">
+          <div class="m-plate m-plate--bbq"></div>
+          <h4>BBQ Ribs</h4>
+        </article>
+        <article class="m-meal">
+          <div class="m-plate m-plate--salmon"></div>
+          <h4>Teriyaki Salmon Bowl</h4>
+        </article>
+        <article class="m-meal">
+          <div class="m-plate m-plate--fish"></div>
+          <h4>Garlic Parmesan Whitefish <em>Signature</em></h4>
+        </article>
+        <article class="m-meal">
+          <div class="m-plate m-plate--hash"></div>
+          <h4>Veggie Breakfast Hash</h4>
+        </article>
+        <article class="m-meal">
+          <div class="m-plate m-plate--pancake"></div>
+          <h4>Protein Pancakes &mdash; Pumpkin</h4>
+        </article>
+        <article class="m-meal">
+          <div class="m-plate m-plate--buffalo"></div>
+          <h4>Buffalo Chicken Meatballs</h4>
+        </article>
+        <article class="m-meal">
+          <div class="m-plate m-plate--panera"></div>
+          <h4>Panera Oven Chicken <em>Signature</em></h4>
+        </article>
+      </div>
+
+      <div class="m-menu__cta">
+        <a href="#menu" class="m-btn m-btn--solid">View Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Configurator -->
+  <section class="m-config" id="program">
+    <div class="m-container">
+      <div class="m-mini-logo">M</div>
+      <h2 class="m-section-title">CREATE YOUR FIRST BOX WITH MEDVi MEALS</h2>
+      <p class="m-section-lead">Discover our weekly rotating meals filled with lean, delicious, and macro-friendly options. Modify, pause, or cancel anytime &mdash; completely hassle-free.</p>
+
+      <div class="m-config__grid">
+        <div class="m-config__panel">
+          <h3 class="m-config__step">1. SELECT YOUR PROGRAM</h3>
+          <p class="m-config__hint">Traditional meal-prep options with standard portion sizes</p>
+          <div class="m-plan-picker">
+            <button class="m-plan m-plan--active">
+              <span class="m-plan__tick">&#9679;</span>
+              <strong>Classic</strong>
+            </button>
+            <button class="m-plan">
+              <span class="m-plan__tick"></span>
+              <strong>Premium</strong>
+            </button>
+          </div>
+
+          <h3 class="m-config__step">2. SELECT YOUR PLAN</h3>
+          <p class="m-config__hint">How many meals per week?</p>
+          <div class="m-meal-picker">
+            <button class="m-count">6</button>
+            <button class="m-count m-count--active">10</button>
+            <button class="m-count">15</button>
+            <button class="m-count">20</button>
+          </div>
+        </div>
+
+        <div class="m-config__summary">
+          <div class="m-summary__row">
+            <span><strong>Classic</strong></span>
+            <a href="#" class="m-summary__edit">&#9998; Edit Selection</a>
+          </div>
+          <div class="m-summary__line">
+            <span>10 Meals per week</span>
+            <span class="m-summary__strike">$149.90 <span>$99.90</span></span>
+          </div>
+          <div class="m-summary__line">
+            <span>Price per serving</span>
+            <span class="m-summary__strike">$14.99 <span>$9.99</span></span>
+          </div>
+          <div class="m-summary__promo">
+            <strong>35% OFF + FREE SHIPPING</strong>
+            <span>Promo applied at checkout: <em>MEDVI35</em></span>
+          </div>
+          <div class="m-summary__line m-summary__line--total">
+            <span>First box total</span>
+            <span>$99.90</span>
+          </div>
+          <a href="#" class="m-btn m-btn--solid m-btn--block">Continue to Select Meals</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="m-newsletter">
+    <div class="m-container m-newsletter__inner">
+      <div class="m-newsletter__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2d5a3f" stroke-width="1.6" stroke-linecap="round">
+          <path d="M7 2v9a2 2 0 0 0 4 0V2M9 2v20"/>
+          <path d="M17 2c-2 0-3 2-3 5s1 5 3 5v10"/>
+        </svg>
+      </div>
+      <h2 class="m-news__title">JOIN FOR EXCLUSIVE OFFERS &amp; UPDATES</h2>
+      <p class="m-news__sub">Subscribe to our newsletter and be the first to know about offers, new products, and expert advice for a healthier lifestyle.</p>
+      <form class="m-news__form" onsubmit="event.preventDefault();this.reset();">
+        <label for="news-email">Email Address</label>
+        <div class="m-news__field">
+          <input id="news-email" type="email" placeholder="Email Address" required>
+          <button type="submit" class="m-btn m-btn--solid">Subscribe</button>
+        </div>
+        <small>You can unsubscribe at any time.</small>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="m-footer" id="contact">
+    <div class="m-container m-footer__inner">
+      <a href="#" class="m-logo m-logo--footer" aria-label="MEDVi Meals"><span class="m-logo__mark">M</span></a>
+      <ul class="m-footer__links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#menu">Weekly Menu</a></li>
+        <li><a href="#program">Programs</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+      <p class="m-footer__copy">Copyright &copy; 2026 MEDVi Meals. All rights reserved. <a href="#">Terms &amp; Conditions</a></p>
+    </div>
+    <a href="#program" class="m-sticky-cta">GET STARTED</a>
+  </footer>
+
+  <script src="js/meals.js"></script>
+</body>
+</html>
