@@ -3,490 +3,384 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MEDVi GLP-1 &mdash; Clinical Weight Loss Program</title>
-  <meta name="description" content="GLP-1 weight loss from MEDVi. Prescription Semaglutide and Tirzepatide with physician oversight, ongoing care, and home delivery. Lose 15-20% body weight on average.">
+  <title>MEDVi GLP-1 &mdash; Personalized Weight Loss Care</title>
+  <meta name="description" content="Finally serious about weight loss? MEDVi makes fat loss easy with personalized care and GLP-1 medication. Start for $179, no insurance required.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/glp.css">
 </head>
 <body class="glp-page">
 
+  <!-- Promo bar -->
+  <div class="promo-bar">
+    <span class="promo-bar__accent">SPRING Promo!</span>
+    <span>Only $179 + Fast, Free Shipping</span>
+  </div>
+
   <!-- Header -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="index.html" class="logo">
-        <span class="logo__text">MEDV<span class="logo__accent">i</span></span>
-        <span class="logo__suffix">GLP-1</span>
+  <header class="g-header" id="header">
+    <div class="g-header__inner">
+      <a href="index.html" class="g-logo" aria-label="MEDVi home">
+        <span class="g-logo__text">MEDV<span class="g-logo__accent">i</span></span>
       </a>
-      <nav class="nav" id="nav">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#how-glp-works" class="nav__link">How It Works</a></li>
-          <li class="nav__item"><a href="#options" class="nav__link">Medications</a></li>
-          <li class="nav__item"><a href="#results" class="nav__link">Results</a></li>
-          <li class="nav__item"><a href="#pricing" class="nav__link">Pricing</a></li>
-          <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
-        </ul>
-      </nav>
-      <div class="header__actions">
-        <a href="#" class="btn btn--outline btn--sm">Log In</a>
-        <a href="#quiz" class="btn btn--primary btn--sm">Start My Plan</a>
+      <div class="g-header__actions">
+        <a href="#quiz" class="g-btn g-btn--dark">GET APPROVED</a>
+        <button class="g-hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="glp-hero">
-    <div class="glp-hero__bg"></div>
-    <div class="container glp-hero__inner">
-      <div class="glp-hero__content">
-        <span class="glp-hero__eyebrow">Prescription GLP-1 Program</span>
-        <h1 class="glp-hero__title">
-          Lose the weight.<br>
-          <span class="text-gradient">Keep it off.</span>
-        </h1>
-        <p class="glp-hero__subtitle">
-          Clinician-prescribed GLP-1 medication paired with 1:1 coaching, nutrition guidance, and monthly check-ins &mdash; shipped discreetly to your door.
-        </p>
-        <div class="glp-hero__cta">
-          <a href="#quiz" class="btn btn--primary btn--lg">Take the 2-Min Quiz</a>
-          <a href="#how-glp-works" class="btn btn--ghost btn--lg">See How It Works</a>
-        </div>
-        <div class="glp-hero__proof">
-          <div class="glp-hero__stat">
-            <span class="glp-hero__stat-num">15-20%</span>
-            <span class="glp-hero__stat-label">Average body weight lost</span>
-          </div>
-          <div class="glp-hero__stat">
-            <span class="glp-hero__stat-num">500K+</span>
-            <span class="glp-hero__stat-label">Patients served</span>
-          </div>
-          <div class="glp-hero__stat">
-            <span class="glp-hero__stat-num">24h</span>
-            <span class="glp-hero__stat-label">Delivery after approval</span>
-          </div>
-        </div>
-      </div>
-      <div class="glp-hero__visual">
-        <div class="glp-hero__pen">
-          <div class="glp-hero__pen-body">
-            <div class="glp-hero__pen-dial"></div>
-            <div class="glp-hero__pen-window"><span>0.25 mg</span></div>
-            <div class="glp-hero__pen-label">MEDVi &middot; GLP-1</div>
-          </div>
-          <div class="glp-hero__pen-needle"></div>
-        </div>
-        <div class="glp-hero__chip glp-hero__chip--1">&#10003; Physician reviewed</div>
-        <div class="glp-hero__chip glp-hero__chip--2">&#10003; FDA-regulated facility</div>
-        <div class="glp-hero__chip glp-hero__chip--3">&#10003; No insurance needed</div>
+  <section class="g-hero">
+    <div class="g-hero__inner">
+      <p class="g-hero__kicker">Join <strong>500,000+</strong> MEDVi patients</p>
+      <h1 class="g-hero__title">
+        Finally serious about weight loss? So are we.
+        Fat loss <em>made easy</em> with personalized care
+        and GLP-1 medication
+      </h1>
+      <ul class="g-hero__checks">
+        <li><span class="g-check">&#10003;</span> Lose pounds of fat every week</li>
+        <li><span class="g-check">&#10003;</span> MEDVi Guarantee</li>
+        <li><span class="g-check">&#10003;</span> <strong>No membership or hidden fees!</strong> Everything you need is included</li>
+        <li><span class="g-check">&#10003;</span> <strong>Start for just $179</strong> no insurance required + free shipping</li>
+        <li><span class="g-check">&#10003;</span> HSA/FSA Approved</li>
+      </ul>
+      <a href="#quiz" class="g-btn g-btn--sage g-hero__cta">AM I QUALIFIED TO JOIN?</a>
+
+      <div class="g-hero__collage">
+        <div class="g-hero__photo g-hero__photo--a" style="background-image:url('https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=480&h=620&fit=crop')"></div>
+        <div class="g-hero__photo g-hero__photo--b" style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&h=360&fit=crop')"></div>
+        <div class="g-hero__photo g-hero__photo--c" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=360&h=520&fit=crop')"></div>
+        <div class="g-hero__photo g-hero__photo--d" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=360&h=620&fit=crop')"></div>
+        <div class="g-hero__photo g-hero__photo--e" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=480&h=560&fit=crop')"></div>
+        <div class="g-hero__photo g-hero__photo--f" style="background-image:url('https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?w=300&h=360&fit=crop')"></div>
       </div>
     </div>
   </section>
 
-  <!-- Logo Bar / Trust -->
-  <section class="glp-trust">
-    <div class="container">
-      <p class="glp-trust__headline">Featured &amp; trusted by patients nationwide</p>
-      <div class="glp-trust__row">
-        <span>As Seen On</span>
-        <span>Healthline</span>
-        <span>Women's Health</span>
-        <span>Men's Journal</span>
-        <span>Forbes</span>
-        <span>The Cut</span>
-      </div>
+  <!-- Press row -->
+  <section class="g-press">
+    <p class="g-press__label">Proud to be featured and advertised in:</p>
+    <div class="g-press__row">
+      <span class="g-press__logo g-press__logo--serif-italic">healthline</span>
+      <span class="g-press__logo g-press__logo--bold">Web<strong style="color:#c53030">MD</strong></span>
+      <span class="g-press__logo g-press__logo--serif">FORTUNE</span>
+      <span class="g-press__logo g-press__logo--condensed">FAST<span>COMPANY</span></span>
+      <span class="g-press__logo g-press__logo--nyt">The New York Times</span>
+      <span class="g-press__logo g-press__logo--bold">Bloomberg</span>
+      <span class="g-press__logo g-press__logo--serif">Forbes</span>
+      <span class="g-press__logo g-press__logo--serif-italic">healthline</span>
     </div>
   </section>
 
-  <!-- What is GLP-1 -->
-  <section class="glp-what" id="how-glp-works">
-    <div class="container glp-what__inner">
-      <div class="glp-what__content">
-        <span class="section-tag">What Is GLP-1?</span>
-        <h2 class="section-title">A hormone your body already makes &mdash; now working for you.</h2>
-        <p class="section-desc">
-          GLP-1 (glucagon-like peptide-1) is a naturally occurring hormone that tells your brain you're full, slows digestion, and helps regulate blood sugar. Prescription GLP-1 medications boost that signal so cravings quiet down, portions feel right, and weight comes off steadily.
-        </p>
-        <div class="glp-what__grid">
-          <div class="glp-what__card">
-            <div class="glp-what__icon">&#129504;</div>
-            <h4>Appetite control</h4>
-            <p>Fewer cravings, smaller portions that actually satisfy you.</p>
-          </div>
-          <div class="glp-what__card">
-            <div class="glp-what__icon">&#128293;</div>
-            <h4>Metabolic reset</h4>
-            <p>Improved insulin sensitivity and stable blood sugar.</p>
-          </div>
-          <div class="glp-what__card">
-            <div class="glp-what__icon">&#9203;</div>
-            <h4>Slower digestion</h4>
-            <p>You feel full longer, so the hunger noise goes quiet.</p>
-          </div>
-          <div class="glp-what__card">
-            <div class="glp-what__icon">&#128170;</div>
-            <h4>Steady results</h4>
-            <p>Gradual, sustainable fat loss &mdash; not crash dieting.</p>
-          </div>
+  <!-- Products -->
+  <section class="g-products">
+    <div class="g-products__head">
+      <h2 class="g-h2">Trusted by experts, <em>priced for you.</em></h2>
+      <p class="g-products__lead">Find the right GLP-1 medication with the confidence that comes from knowing it is doctor-approved and budget-friendly.</p>
+    </div>
+    <div class="g-products__grid">
+      <article class="g-product">
+        <div class="g-product__img g-product__img--vial">
+          <div class="g-product__label">PRESCRIPTION<br><strong>GLP</strong><br>MEDICATION</div>
         </div>
-      </div>
+        <p class="g-product__start">Starting at $179</p>
+        <h3 class="g-product__name">GLP-1 Injections</h3>
+        <p class="g-product__sub">One simple injection per week</p>
+        <a href="#quiz" class="g-btn g-btn--dark g-btn--sm">GET STARTED</a>
+      </article>
+      <article class="g-product">
+        <div class="g-product__img g-product__img--pill">
+          <div class="g-product__pillbox"><span>wegovy</span><small>Pill</small></div>
+        </div>
+        <p class="g-product__start">$50 Membership + Medication Cost</p>
+        <h3 class="g-product__name">Wegovy&reg; Pill</h3>
+        <p class="g-product__sub">One pill per day</p>
+        <a href="#quiz" class="g-btn g-btn--dark g-btn--sm">GET STARTED</a>
+      </article>
+      <article class="g-product">
+        <div class="g-product__img g-product__img--tablet">
+          <div class="g-product__label">GLP</div>
+        </div>
+        <p class="g-product__start">Starting at $249</p>
+        <h3 class="g-product__name">GLP-1 Tablets</h3>
+        <p class="g-product__sub">One dissolvable tablet per day</p>
+        <a href="#quiz" class="g-btn g-btn--dark g-btn--sm">GET STARTED</a>
+      </article>
+      <article class="g-product">
+        <div class="g-product__img g-product__img--pen">
+          <div class="g-product__pen"></div>
+        </div>
+        <p class="g-product__start">$50 Membership + Medication Cost</p>
+        <h3 class="g-product__name">Wegovy&reg; Pen</h3>
+        <p class="g-product__sub">Availability limited</p>
+        <a href="#quiz" class="g-btn g-btn--dark g-btn--sm">GET STARTED</a>
+      </article>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section class="glp-process">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Simple Process</span>
-        <h2 class="section-title section-title--light">From quiz to doorstep in 3 steps</h2>
-        <p class="section-desc section-desc--light">Your first month's medication ships within 24 hours of physician approval.</p>
-      </div>
-      <div class="glp-process__grid">
-        <div class="glp-process__step">
-          <div class="glp-process__num">01</div>
-          <h3>Take the online quiz</h3>
-          <p>Share your health history, goals, and measurements. Takes about 2 minutes.</p>
-        </div>
-        <div class="glp-process__step">
-          <div class="glp-process__num">02</div>
-          <h3>Get reviewed by a physician</h3>
-          <p>A licensed clinician reviews your intake and determines the right GLP-1 plan for you.</p>
-        </div>
-        <div class="glp-process__step">
-          <div class="glp-process__num">03</div>
-          <h3>Receive medication at home</h3>
-          <p>Discreet shipping plus unlimited messaging with your care team &mdash; for as long as you're on the program.</p>
-        </div>
-      </div>
+  <!-- Hero testimonial -->
+  <section class="g-review">
+    <p class="g-review__count">15,000+ Patients Agree</p>
+    <div class="g-review__stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <h2 class="g-review__quote">&ldquo;When nothing else worked, <em>MEDVi did</em>&rdquo;</h2>
+    <p class="g-review__verified"><span class="g-check g-check--ring">&#10003;</span> Verified MEDVi Customer</p>
+    <div class="g-review__stage">
+      <div class="g-review__vial"></div>
+      <span class="g-review__float g-review__float--1">Very easy and convenient for a very busy working day.</span>
+      <span class="g-review__float g-review__float--2">...the weight vanished!</span>
+      <span class="g-review__float g-review__float--3">Very nice and very informative. Dr. Quick and easy!</span>
+      <span class="g-review__float g-review__float--4">Every person I have contact with shows compassion.</span>
+      <span class="g-review__float g-review__float--5">The company and doctors amazing they take care of everything.</span>
+      <span class="g-review__float g-review__float--6">NP was very helpful and friendly!</span>
     </div>
+    <div class="g-review__hsa"><span class="g-check g-check--ring g-check--teal">&#10003;</span> HSA/FSA Eligible</div>
   </section>
 
-  <!-- Medication Options -->
-  <section class="glp-options" id="options">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Your Options</span>
-        <h2 class="section-title">Two proven medications. Two convenient formats.</h2>
-        <p class="section-desc">Your clinician recommends the right one based on your goals, health history, and lifestyle.</p>
+  <!-- Weight slider -->
+  <section class="g-slider">
+    <div class="g-slider__inner">
+      <div class="g-slider__left">
+        <h2 class="g-h2">Want to reach your <em>goal weight fast?</em></h2>
+        <p class="g-slider__desc">It's not magic &mdash; it's metabolic science. GLP-1 is a naturally occurring hormone that regulates appetite and blood sugar, improving your metabolism and breaking out cravings.</p>
+        <a href="#quiz" class="g-btn g-btn--dark">GET STARTED</a>
       </div>
-      <div class="glp-options__grid">
-        <article class="med-card">
-          <div class="med-card__tag">Weekly Injection</div>
-          <h3 class="med-card__name">Semaglutide</h3>
-          <p class="med-card__desc">The original GLP-1 prescribed for weight management. Self-administered once per week with a micro-needle pen.</p>
-          <ul class="med-card__list">
-            <li>Weekly dose</li>
-            <li>Appetite &amp; cravings control</li>
-            <li>Average 15% body weight loss</li>
-          </ul>
-          <div class="med-card__foot">
-            <span class="med-card__price">$179<small>/first month</small></span>
-            <a href="#quiz" class="btn btn--primary btn--sm">Start</a>
-          </div>
-        </article>
-        <article class="med-card med-card--featured">
-          <div class="med-card__badge">Most effective</div>
-          <div class="med-card__tag">Weekly Injection</div>
-          <h3 class="med-card__name">Tirzepatide</h3>
-          <p class="med-card__desc">A dual-action GLP-1 + GIP medication. Often produces greater weight loss compared to single-action options.</p>
-          <ul class="med-card__list">
-            <li>Weekly dose</li>
-            <li>Dual GLP-1 + GIP action</li>
-            <li>Average 20% body weight loss</li>
-          </ul>
-          <div class="med-card__foot">
-            <span class="med-card__price">$279<small>/first month</small></span>
-            <a href="#quiz" class="btn btn--primary btn--sm">Start</a>
-          </div>
-        </article>
-        <article class="med-card">
-          <div class="med-card__tag">Daily Tablet</div>
-          <h3 class="med-card__name">Semaglutide Tablet</h3>
-          <p class="med-card__desc">Needle-free daily dissolvable tablet. Ideal if you prefer an oral option over injections.</p>
-          <ul class="med-card__list">
-            <li>Daily dose</li>
-            <li>No injection required</li>
-            <li>Same active ingredient</li>
-          </ul>
-          <div class="med-card__foot">
-            <span class="med-card__price">$249<small>/first month</small></span>
-            <a href="#quiz" class="btn btn--primary btn--sm">Start</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Results / Expected Loss -->
-  <section class="glp-results" id="results">
-    <div class="container glp-results__inner">
-      <div class="glp-results__content">
-        <span class="section-tag">Expected Results</span>
-        <h2 class="section-title">Real change, month after month</h2>
-        <p class="section-desc">Every body is different, but GLP-1 patients typically see a clear, steady trend down on the scale &mdash; without extreme restriction.</p>
-        <ul class="glp-results__list">
-          <li><strong>Month 1:</strong> appetite reduces, cravings quiet down, first few pounds come off.</li>
-          <li><strong>Month 3:</strong> clothes fit differently, steady 5-8% body weight lost.</li>
-          <li><strong>Month 6:</strong> most patients reach the 10-15% range and build new habits.</li>
-          <li><strong>Month 12:</strong> 15-20% average loss with ongoing clinical support.</li>
-        </ul>
-      </div>
-      <div class="glp-results__chart">
-        <div class="glp-chart">
-          <div class="glp-chart__grid">
-            <span></span><span></span><span></span><span></span>
-          </div>
-          <svg class="glp-chart__line" viewBox="0 0 400 240" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="glpFill" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stop-color="#0d9488" stop-opacity="0.35"/>
-                <stop offset="100%" stop-color="#0d9488" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <path d="M0,40 C80,60 140,110 220,150 C280,180 340,200 400,210 L400,240 L0,240 Z" fill="url(#glpFill)"/>
-            <path d="M0,40 C80,60 140,110 220,150 C280,180 340,200 400,210" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-          <div class="glp-chart__markers">
-            <div><span>Month 1</span><strong>-2%</strong></div>
-            <div><span>Month 3</span><strong>-7%</strong></div>
-            <div><span>Month 6</span><strong>-13%</strong></div>
-            <div><span>Month 12</span><strong>-18%</strong></div>
-          </div>
+      <div class="g-slider__right">
+        <div class="g-slider__row">
+          <span class="g-slider__label">Select your current weight</span>
+          <span class="g-slider__value" id="gw-current">200 lbs</span>
+        </div>
+        <input type="range" min="130" max="350" value="200" class="g-slider__input" id="gw-input">
+        <div class="g-slider__row g-slider__row--bottom">
+          <span class="g-slider__label">Weight loss potential</span>
+          <span class="g-slider__value g-slider__value--accent" id="gw-loss">46 lbs</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Care Team -->
-  <section class="glp-care">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Ongoing Care</span>
-        <h2 class="section-title">You're never on this alone.</h2>
-        <p class="section-desc">Every plan includes unlimited messaging with your care coaches &mdash; certified medical assistants and registered dietitians trained specifically on GLP-1 care.</p>
+  <!-- Change we've been waiting for -->
+  <section class="g-change">
+    <div class="g-change__head">
+      <h2 class="g-h2 g-h2--center">The change we've all been waiting for.</h2>
+      <p class="g-lead">Join the new 500,000 MEDVi patients and we'll help you finally get real lasting results.</p>
+    </div>
+    <div class="g-change__collage">
+      <div class="g-change__cell" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=420&h=420&fit=crop')"></div>
+      <div class="g-change__cell" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=420&h=420&fit=crop')"></div>
+      <div class="g-change__cell g-change__cell--wide" style="background-image:url('https://images.unsplash.com/photo-1594824804732-ca8db7531246?w=620&h=420&fit=crop')"></div>
+      <div class="g-change__cell" style="background-image:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=420&h=420&fit=crop')"></div>
+      <div class="g-change__cell" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=420&h=420&fit=crop')"></div>
+      <div class="g-change__cell" style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=420&h=420&fit=crop')"></div>
+      <div class="g-change__cell" style="background-image:url('https://images.unsplash.com/photo-1605405748313-a416a1b84491?w=420&h=420&fit=crop')"></div>
+    </div>
+    <ul class="g-change__stats">
+      <li><span class="g-check">&#10003;</span> 6x more weight loss than exercise and diet alone</li>
+      <li><span class="g-check">&#10003;</span> Lose an average of 18% of your body weight</li>
+      <li><span class="g-check">&#10003;</span> 93% kept the weight off for good</li>
+    </ul>
+    <p class="g-change__note">* Data based on MEDVi patients over their first 6 months of treatment.</p>
+  </section>
+
+  <!-- Fix metabolism -->
+  <section class="g-fix">
+    <div class="g-fix__card">
+      <div class="g-fix__media">
+        <div class="g-fix__photo g-fix__photo--a" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=420&h=540&fit=crop')"></div>
+        <div class="g-fix__photo g-fix__photo--b" style="background-image:url('https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=300&h=380&fit=crop')"></div>
       </div>
-      <div class="glp-care__grid">
-        <div class="glp-care__card">
-          <span class="glp-care__icon">&#128172;</span>
-          <h4>Unlimited messaging</h4>
-          <p>Questions about dose, side effects, or meals? Ask anytime.</p>
-        </div>
-        <div class="glp-care__card">
-          <span class="glp-care__icon">&#128197;</span>
-          <h4>Monthly check-ins</h4>
-          <p>Track weight, appetite, and how you feel &mdash; your plan adjusts with you.</p>
-        </div>
-        <div class="glp-care__card">
-          <span class="glp-care__icon">&#127858;</span>
-          <h4>Nutrition guidance</h4>
-          <p>Protein-forward meal plans designed for GLP-1 fat loss + muscle protection.</p>
-        </div>
-        <div class="glp-care__card">
-          <span class="glp-care__icon">&#128104;&#8205;&#9877;&#65039;</span>
-          <h4>Clinician access</h4>
-          <p>Virtual visits with your provider, often same-day when you need them.</p>
-        </div>
+      <div class="g-fix__body">
+        <h2 class="g-h2">We will fix your broken metabolism.</h2>
+        <p class="g-fix__desc">Traditional diets don't work because nearly 70% of weight is genetically determined. With medication, you will work with your body rather than against it &mdash; to reach your goal weight and keep it that way.</p>
+        <a href="#quiz" class="g-btn g-btn--dark">GET STARTED</a>
       </div>
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="glp-pricing" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Pricing</span>
-        <h2 class="section-title">No insurance. No hidden fees. Cancel anytime.</h2>
-        <p class="section-desc">Your first month includes physician review, a full plan, 1:1 guidance, metabolic report, and prescription medication shipped to your door.</p>
+  <!-- It works -->
+  <section class="g-works">
+    <h2 class="g-h2 g-h2--center">Why are so many patients signing up for MEDVi? <em>It works.</em></h2>
+    <p class="g-lead g-lead--center">On average, patients in the MEDVi program lose 15-20% of their body weight.</p>
+    <div class="g-works__grid">
+      <div class="g-works__stat">
+        <span class="g-works__num">18<small>%</small></span>
+        <span class="g-works__label">Average weight loss</span>
       </div>
-      <div class="pricing__grid">
-        <div class="pricing-card">
-          <div class="pricing-card__header">
-            <h3>Semaglutide Injection</h3>
-            <p>Weekly injection</p>
-          </div>
-          <div class="pricing-card__price">
-            <span class="pricing-card__amount">$179</span>
-            <span class="pricing-card__period">/first month</span>
-          </div>
-          <p class="pricing-card__after">Then $299/month</p>
-          <ul class="pricing-card__features">
-            <li>&#10003; Physician review &amp; approval</li>
-            <li>&#10003; Personalized dosing schedule</li>
-            <li>&#10003; Prescription medication</li>
-            <li>&#10003; Home delivery</li>
-            <li>&#10003; Ongoing clinical support</li>
-            <li>&#10003; Unlimited messaging</li>
-          </ul>
-          <a href="#quiz" class="btn btn--primary btn--block">Get Started</a>
-        </div>
-        <div class="pricing-card pricing-card--featured">
-          <div class="pricing-card__badge">Most Popular</div>
-          <div class="pricing-card__header">
-            <h3>Tirzepatide Injection</h3>
-            <p>Weekly injection</p>
-          </div>
-          <div class="pricing-card__price">
-            <span class="pricing-card__amount">$279</span>
-            <span class="pricing-card__period">/first month</span>
-          </div>
-          <p class="pricing-card__after">Then $399/month</p>
-          <ul class="pricing-card__features">
-            <li>&#10003; Physician review &amp; approval</li>
-            <li>&#10003; Personalized dosing schedule</li>
-            <li>&#10003; Prescription medication</li>
-            <li>&#10003; Home delivery</li>
-            <li>&#10003; Ongoing clinical support</li>
-            <li>&#10003; Unlimited messaging</li>
-            <li>&#10003; Priority support</li>
-          </ul>
-          <a href="#quiz" class="btn btn--primary btn--block">Get Started</a>
-        </div>
-        <div class="pricing-card">
-          <div class="pricing-card__header">
-            <h3>Semaglutide Tablet</h3>
-            <p>Daily dissolvable tablet</p>
-          </div>
-          <div class="pricing-card__price">
-            <span class="pricing-card__amount">$249</span>
-            <span class="pricing-card__period">/first month</span>
-          </div>
-          <p class="pricing-card__after">Then $369/month</p>
-          <ul class="pricing-card__features">
-            <li>&#10003; Physician review &amp; approval</li>
-            <li>&#10003; Personalized dosing schedule</li>
-            <li>&#10003; Prescription medication</li>
-            <li>&#10003; Home delivery</li>
-            <li>&#10003; Ongoing clinical support</li>
-            <li>&#10003; Unlimited messaging</li>
-          </ul>
-          <a href="#quiz" class="btn btn--primary btn--block">Get Started</a>
-        </div>
+      <div class="g-works__stat">
+        <span class="g-works__num">9/10</span>
+        <span class="g-works__label">Patients call it the most effective treatment to date.</span>
+      </div>
+      <div class="g-works__stat">
+        <span class="g-works__num">6.5<small>&quot;</small></span>
+        <span class="g-works__label">Potential waist reduction</span>
+      </div>
+      <div class="g-works__stat">
+        <span class="g-works__num">93<small>%</small></span>
+        <span class="g-works__label">Kept the weight off</span>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="glp-testi">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Real Patients</span>
-        <h2 class="section-title">Results that changed how they live.</h2>
+  <!-- Journey steps -->
+  <section class="g-journey">
+    <div class="g-journey__inner">
+      <div class="g-journey__left">
+        <h2 class="g-h2">Begin your weight loss journey with <em>MEDVi</em>.</h2>
+        <p class="g-journey__desc">Start your transformation today with MEDVi's easy, personalized process for accessing GLP-1 medications. Designed with your convenience in mind, our streamlined approach ensures you're supported every step of the way, from approval to receiving your prescription.</p>
+        <a href="#quiz" class="g-btn g-btn--dark">GET STARTED</a>
       </div>
-      <div class="glp-testi__grid">
-        <figure class="glp-testi__card">
-          <blockquote>&ldquo;The cravings finally quieted down. For the first time in years, food wasn't running my day.&rdquo;</blockquote>
-          <figcaption><strong>Sarah M.</strong> &middot; Down 42 lbs in 7 months</figcaption>
-        </figure>
-        <figure class="glp-testi__card">
-          <blockquote>&ldquo;The care team checked in every month and adjusted my dose when I needed it. It felt like actual medicine, not a gimmick.&rdquo;</blockquote>
-          <figcaption><strong>Marcus T.</strong> &middot; Down 58 lbs in 9 months</figcaption>
-        </figure>
-        <figure class="glp-testi__card">
-          <blockquote>&ldquo;Delivery was discreet, the app is simple, and my coach answered messages the same day. I feel like myself again.&rdquo;</blockquote>
-          <figcaption><strong>Priya S.</strong> &middot; Down 31 lbs in 5 months</figcaption>
-        </figure>
+      <ol class="g-journey__steps">
+        <li class="g-journey__step">
+          <div class="g-journey__dot"></div>
+          <h3>Get Approved</h3>
+          <p>Complete a quick online evaluation to determine if GLP-1 medication is right for you. Our team of licensed professionals will review your information and provide approval in no time.</p>
+          <div class="g-journey__photo" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=560&h=300&fit=crop')"></div>
+        </li>
+        <li class="g-journey__step">
+          <div class="g-journey__dot"></div>
+          <h3>Get Prescribed</h3>
+          <p>Once approved, you'll receive personalized care and a prescription to support your weight loss and health goals. Your care plan is designed to help you achieve lasting results safely and effectively.</p>
+          <div class="g-journey__photo" style="background-image:url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=560&h=300&fit=crop')"></div>
+        </li>
+        <li class="g-journey__step">
+          <div class="g-journey__dot"></div>
+          <h3>Receive your Rx</h3>
+          <p>Your medication will be shipped directly to your door for maximum convenience. With MEDVi, starting your treatment is as simple as opening your package and following our easy-to-use instructions.</p>
+          <div class="g-journey__photo" style="background-image:url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=560&h=300&fit=crop')"></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 24/7 support -->
+  <section class="g-support">
+    <div class="g-support__card">
+      <div class="g-support__body">
+        <h2 class="g-h2">Unlimited 24/7 support <em>included.</em></h2>
+        <p class="g-support__desc">MEDVi provides 24/7 access to a dedicated team of specialists, ensuring you have the support you need around the clock. With unlimited appointments, messaging and support, you can confidently reach out for guidance, ask questions or address concerns at any time.</p>
       </div>
+      <div class="g-support__media">
+        <div class="g-support__photo" style="background-image:url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=360&h=440&fit=crop')"></div>
+        <div class="g-support__photo" style="background-image:url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=360&h=440&fit=crop')"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Raving testimonials -->
+  <section class="g-raving">
+    <div class="g-raving__head">
+      <h2 class="g-h2">There's a reason people are <em>raving about us.</em></h2>
+      <div class="g-raving__headRight">
+        <p>Join the thousands of people who have trusted MEDVi to help change their lives, achieving significant, lasting weight loss.</p>
+        <a href="#quiz" class="g-btn g-btn--dark">I'M READY, LET'S GO</a>
+      </div>
+    </div>
+    <div class="g-raving__grid">
+      <figure class="g-testi">
+        <header><span class="g-testi__avatar" style="background-image:url('https://images.unsplash.com/photo-1548142813-c348350df52b?w=80&h=80&fit=crop')"></span><strong>Tanka</strong><span class="g-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></header>
+        <blockquote>The provider was knowledgeable and helpful. She answered all my questions and made me feel as if she was not our first time meeting. I was very comfortable and enjoyed our conversation.</blockquote>
+      </figure>
+      <div class="g-testi__photo" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=420&h=300&fit=crop')"></div>
+      <figure class="g-testi">
+        <header><span class="g-testi__avatar" style="background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop')"></span><strong>Jamie</strong><span class="g-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></header>
+        <blockquote>The questions are to the point and easy to navigate. I'm able to voice my concerns if needed and ask questions at MEDVi. They are quick to respond and keep me updated on my prescription.</blockquote>
+      </figure>
+      <div class="g-testi__photo" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=420&h=300&fit=crop')"></div>
+      <div class="g-testi__photo" style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=420&h=300&fit=crop')"></div>
+      <figure class="g-testi">
+        <header><span class="g-testi__avatar" style="background-image:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop')"></span><strong>Lou-Ann</strong><span class="g-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></header>
+        <blockquote>MEDVi Doctors &amp; Staff have been very professional and prompt with any questions I have and their support &amp; care I feel in great hands! I'm 10lbs away from Goal and expected to be on a Maintenance Dose for awhile until I feel confident in maintaining My current healthy eating Plan. Thank you!</blockquote>
+      </figure>
+      <figure class="g-testi">
+        <header><span class="g-testi__avatar" style="background-image:url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&h=80&fit=crop')"></span><strong>Elizabeth</strong><span class="g-testi__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></header>
+        <blockquote>My Clinician was kind, informative, gave a clear understanding of expectations, and future follow ups and dosage changes. Very easy to understand and helpful.</blockquote>
+      </figure>
+      <div class="g-testi__photo" style="background-image:url('https://images.unsplash.com/photo-1605405748313-a416a1b84491?w=420&h=300&fit=crop')"></div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="glp-faq" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">FAQ</span>
-        <h2 class="section-title">Your most common GLP-1 questions</h2>
-      </div>
-      <div class="glp-faq__list">
-        <details class="glp-faq__item" open>
-          <summary>Am I a good candidate for GLP-1?</summary>
-          <p>Most adults with a BMI of 27 or higher, or 25+ with weight-related health goals, are eligible. Your physician will confirm during your review. GLP-1 is not recommended during pregnancy or with certain thyroid conditions.</p>
-        </details>
-        <details class="glp-faq__item">
-          <summary>What are the side effects?</summary>
-          <p>The most common are mild nausea, constipation, or fatigue during the first few weeks as your body adjusts. Your care team helps you dose carefully to minimize these, and most patients find them fade within a month.</p>
-        </details>
-        <details class="glp-faq__item">
-          <summary>Do I need insurance?</summary>
-          <p>No. MEDVi's program is paid monthly out of pocket &mdash; no insurance, no surprise billing, and you can cancel anytime.</p>
-        </details>
-        <details class="glp-faq__item">
-          <summary>How fast will I see results?</summary>
-          <p>Most patients feel appetite changes within the first week and see the scale move by week 3&ndash;4. The larger 15&ndash;20% loss typically lands between months 6 and 12.</p>
-        </details>
-        <details class="glp-faq__item">
-          <summary>Is the medication FDA-approved?</summary>
-          <p>Compounded GLP-1s are produced in FDA-regulated facilities. Although these facilities are highly regulated, the compounded medications themselves are not FDA-approved or evaluated for safety, efficacy, or quality. Your clinician will discuss the options with you.</p>
-        </details>
-        <details class="glp-faq__item">
-          <summary>What if I stop the medication?</summary>
-          <p>Our care team builds a long-term plan including nutrition, movement, and maintenance protocols so results stick. If you taper off, we stay with you through that transition too.</p>
-        </details>
+  <section class="g-faq" id="faq">
+    <h2 class="g-h2 g-h2--center">Frequently Asked Questions</h2>
+    <div class="g-faq__list">
+      <details class="g-faq__item">
+        <summary><span>How much does the program cost?</span><i class="g-faq__icon"></i></summary>
+        <p>The GLP-1 injection program starts at $179 for your first month and includes medical evaluation, physician review, medication, and shipping. Ongoing care remains affordable with no hidden fees.</p>
+      </details>
+      <details class="g-faq__item">
+        <summary><span>Will this work for me?</span><i class="g-faq__icon"></i></summary>
+        <p>Over 500,000 patients have trusted MEDVi with an average loss of 15-20% of body weight. Our licensed clinicians will review your intake to confirm you're a candidate and tailor a plan to your body and lifestyle.</p>
+      </details>
+      <details class="g-faq__item">
+        <summary><span>What if my insurance doesn't cover the medication?</span><i class="g-faq__icon"></i></summary>
+        <p>No insurance required. MEDVi is self-pay with transparent, monthly pricing and HSA/FSA eligibility so you always know what you owe.</p>
+      </details>
+      <details class="g-faq__item">
+        <summary><span>What can I expect after I sign up?</span><i class="g-faq__icon"></i></summary>
+        <p>After a quick online evaluation, a licensed provider reviews your profile. Once approved, your medication ships directly to your door and your care team stays available 24/7.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Guarantee -->
+  <section class="g-guarantee">
+    <div class="g-guarantee__card">
+      <div class="g-guarantee__ring" aria-hidden="true"></div>
+      <div class="g-guarantee__body">
+        <p class="g-guarantee__eyebrow">MEDVi Guarantee</p>
+        <h3 class="g-guarantee__title">The only thing you'll lose is <em>extra weight.</em></h3>
+        <p class="g-guarantee__desc">With over 500,000+ patients, we're confident you will reach your goal with our personalized program.</p>
+        <a href="#quiz" class="g-btn g-btn--yellow">CONTINUE WITH CONFIDENCE</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section" id="quiz">
-    <div class="container cta-section__inner">
-      <h2 class="cta-section__title">Your plan starts with one 2-minute quiz.</h2>
-      <p class="cta-section__desc">Find out in minutes whether you're a candidate and what your monthly cost looks like &mdash; no commitment.</p>
-      <a href="#" class="btn btn--white btn--lg">Take the Quiz &mdash; $179 first month</a>
+  <!-- Goal quiz -->
+  <section class="g-goal" id="quiz">
+    <div class="g-goal__card">
+      <h2 class="g-h2 g-h2--center">What's your weight loss goal?</h2>
+      <form class="g-goal__form" onsubmit="event.preventDefault();">
+        <label class="g-goal__opt"><input type="radio" name="goal" value="1-20"><span>Losing 1-20 lbs</span></label>
+        <label class="g-goal__opt"><input type="radio" name="goal" value="21-50"><span>Losing 21-50 lbs</span></label>
+        <label class="g-goal__opt"><input type="radio" name="goal" value="51+"><span>Losing 51+ lbs</span></label>
+        <label class="g-goal__opt"><input type="radio" name="goal" value="any"><span>Not sure, I just want to lose the weight</span></label>
+        <button type="submit" class="g-btn g-btn--dark g-btn--block">CONTINUE</button>
+      </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <a href="index.html" class="logo">
-            <span class="logo__text logo__text--light">MEDV<span class="logo__accent">i</span></span>
-          </a>
-          <p class="footer__tagline">Personalized telehealth care with clinician-guided solutions designed to fit your life.</p>
-        </div>
-        <div class="footer__links">
-          <div class="footer__col">
-            <h4>Program</h4>
-            <ul>
-              <li><a href="#how-glp-works">How GLP-1 Works</a></li>
-              <li><a href="#options">Medications</a></li>
-              <li><a href="#results">Results</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#faq">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="footer__col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="index.html">Homepage</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Reviews</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Careers</a></li>
-            </ul>
-          </div>
-          <div class="footer__col">
-            <h4>Support</h4>
-            <ul>
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p>&copy; 2024 MEDVi. All rights reserved.</p>
-        <p class="footer__disclaimer">Compounded GLP-1s are produced in FDA-regulated facilities. Although these facilities are highly regulated, the medications are not FDA-approved or evaluated for safety, efficacy, or quality. MEDVi is available in every state except North Dakota. Results vary. Individual outcomes depend on adherence, baseline weight, and medical history.</p>
+  <footer class="g-footer">
+    <div class="g-footer__inner">
+      <a href="index.html" class="g-logo g-logo--footer"><span class="g-logo__text">MEDV<span class="g-logo__accent">i</span></span></a>
+      <p class="g-footer__disclaimer">Actual prices (&quot;Regular&quot; / Listed&quot;), and products displayed on this internet site are protected and belong to their respective owners. Medical treatment is provided by California Licensed Physicians. All content and materials shown or discussed on this website are for informational purposes only and should not be considered representative of MEDVi patient experiences.</p>
+      <p class="g-footer__disclaimer">Certain materials on this website, including text, images, and other media, may be generated or enhanced using artificial intelligence techniques or models. No representation or warranty is made regarding the accuracy, completeness, or reliability of such content. Individuals appearing in advertisements may be actor representations and not actual MEDVi patients. For patient privacy, images representing these testimonials may use models.</p>
+      <p class="g-footer__disclaimer">By accepting our Terms of Use, you additionally understand and agree that MEDVi is not acting as a pharmacy, nor does MEDVi control or interfere with any such services. By accepting these Terms of Use, you understand and agree that you may be entering into a relationship with a pharmacy, pharmacist, and/or pharmacy group or other such relationship with any one or more such third-party entities. Partner pharmacies include:</p>
+      <ul class="g-footer__list">
+        <li><strong>TrueRx</strong><br>https://www.truerx.us<br>Address: 14236 Pickard Rd, Daphne, AL 36526<br>Phone: (251) 962-7030</li>
+        <li><strong>Precision Medicine</strong><br>https://precisionmedx.com<br>Address: 530 E 72nd St #2, New York, NY 10021<br>Phone: (718) 820-4282</li>
+        <li><strong>Redrock Pharmacy</strong><br>https://www.redrockpharmacy.com<br>Address: 5540 E 425 S Ste E, St. George, UT 84790<br>Phone: (800) 815-9550</li>
+        <li><strong>Baylor Pharmacy &amp; Compounding</strong><br>https://www.baylorpharmacy.com/baylorpharmacy-compounding<br>Address: 700 Odessa Pkwy Suite 370, McKinney, TX 75071<br>Phone: (972) 972-ATRZ</li>
+      </ul>
+      <div class="g-footer__bottom">
+        <p>&copy; 2026 MEDVi. All rights reserved.</p>
+        <ul class="g-footer__legal">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Privacy Practices</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Medical Consent</a></li>
+          <li><a href="#">For California Residents</a></li>
+          <li><a href="#">Bill of Rights</a></li>
+        </ul>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/glp.js"></script>
 </body>
 </html>
