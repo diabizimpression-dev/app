@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime.BXVgRTY5.mjs";function t(e,t){return{description:`MEDVi is changing the way patients receive healthcare. From 24/7, one-on-one support to personalized care, MEDVi patients are taken care of from start to finish.`,favicon:`https://framerusercontent.com/assets/xWKyg85eDVm8FJeXNodQY3RoGpE.png`,robots:`max-image-preview:large`,socialImage:`https://framerusercontent.com/assets/lq7E8cjKLzZdwet17utaHdrz5yQ.jpg`,title:`QUAD by MEDVi`}}var n=e((()=>{}));export{t as n,n as t};
+//# sourceMappingURL=shared-lib.B1D70u2O.mjs.map
