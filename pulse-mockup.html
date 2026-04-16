@@ -358,6 +358,8 @@ function switchTab(id) {
   }
   window.scrollTo({top:0, behavior:'smooth'});
 }
+// Auto-switch on hash
+if(location.hash) switchTab(location.hash.slice(1));
 </script>
 </body>
 </html>
