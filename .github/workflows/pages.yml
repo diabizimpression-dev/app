@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - claude/load-webfetch-tool-AeM3L
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Create index redirect to pulse
+        run: |
+          cat > _site_index.html <<'EOF'
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>Redirecting to Pulse</title>
+          <meta http-equiv="refresh" content="0; url=./pulse.html">
+          <link rel="canonical" href="./pulse.html">
+          <p>Redirecting to <a href="./pulse.html">Pulse</a>...</p>
+          EOF
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
