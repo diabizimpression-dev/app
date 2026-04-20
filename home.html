@@ -347,5 +347,42 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
   height: 0;
 }
 </style><!-- SnippetEnd: Hbu5460jC --><!-- End of bodyEnd -->
+<script>
+(function(){
+  var injected = false;
+  function tryInject(){
+    if(injected) return;
+    var tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    var n;
+    while((n = tw.nextNode())){
+      if(n.nodeValue && n.nodeValue.trim() === 'Perte de poids'){
+        var textEl = n.parentElement;
+        var item = textEl;
+        for(var i=0;i<8;i++){
+          if(item.parentElement && item.parentElement.children.length > 1) break;
+          item = item.parentElement;
+        }
+        var list = item.parentElement;
+        var clone = item.cloneNode(true);
+        var cw = document.createTreeWalker(clone, NodeFilter.SHOW_TEXT, null, false);
+        var cn;
+        while((cn = cw.nextNode())){
+          if(cn.nodeValue.trim() === 'Perte de poids'){ cn.nodeValue = 'Pulse'; break; }
+        }
+        clone.querySelectorAll('a').forEach(function(a){ a.href='./pulse.html'; a.removeAttribute('target'); });
+        if(!clone.querySelector('a')){
+          clone.style.cursor='pointer';
+          clone.onclick=function(){ window.location.href='./pulse.html'; };
+        }
+        list.insertBefore(clone, item);
+        injected = true;
+        return;
+      }
+    }
+  }
+  var obs = new MutationObserver(tryInject);
+  obs.observe(document.body,{childList:true,subtree:true});
+})();
+</script>
 </body>
 </html>
