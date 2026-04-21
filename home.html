@@ -349,43 +349,50 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
 </style><!-- SnippetEnd: Hbu5460jC --><!-- End of bodyEnd -->
 <script>
 (function(){
-  setInterval(function(){
+  var ov=document.createElement('a');
+  ov.href='./pulse.html';
+  ov.innerHTML='<span>Pulse</span><svg width="7" height="12" viewBox="0 0 7 12" fill="none" style="margin-left:auto"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  ov.style.cssText='position:fixed;z-index:999999;display:none;align-items:center;justify-content:space-between;padding:14px 32px;font-family:Inter,system-ui,sans-serif;font-size:16px;font-weight:400;color:#1a1a1a;background:#fff;text-decoration:none;cursor:pointer;box-sizing:border-box;border-bottom:1px solid rgba(0,0,0,0.06);transition:background .15s;';
+  ov.onmouseenter=function(){ov.style.background='#f5f5f5';};
+  ov.onmouseleave=function(){ov.style.background='#fff';};
+  document.body.appendChild(ov);
+  function check(){
+    requestAnimationFrame(check);
     var tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);
-    var n;
+    var n,target=null;
     while((n=tw.nextNode())){
       if(!n.nodeValue||n.nodeValue.trim()!=='Weight Loss') continue;
-      var row=n.parentElement;
-      var list=null;
-      for(var lvl=0;lvl<12;lvl++){
-        var p=row.parentElement;
-        if(!p||p===document.body) break;
-        var sibs=p.children;
-        var found=false;
-        for(var s=0;s<sibs.length;s++){
-          if(sibs[s]===row) continue;
-          var t=sibs[s].textContent||'';
-          if(t.indexOf('Testimonials')!==-1){found=true;break;}
+      var el=n.parentElement;
+      if(!el) continue;
+      var r=el.getBoundingClientRect();
+      if(r.width===0||r.height===0) continue;
+      var a=el;
+      for(var i=0;i<20;i++){
+        a=a.parentElement;
+        if(!a||a===document.body) break;
+        if(getComputedStyle(a).position==='fixed'&&a.textContent.indexOf('Testimonials')!==-1){
+          target=el;break;
         }
-        if(found){list=p;break;}
-        row=p;
       }
-      if(!list||list.querySelector('[data-pulse]')) continue;
-      var clone=row.cloneNode(true);
-      clone.setAttribute('data-pulse','1');
-      var cw=document.createTreeWalker(clone,NodeFilter.SHOW_TEXT,null,false);
-      var cn;
-      while((cn=cw.nextNode())){
-        if(cn.nodeValue.trim()==='Weight Loss'){cn.nodeValue='Pulse';break;}
-      }
-      clone.querySelectorAll('a').forEach(function(a){a.href='./pulse.html';a.removeAttribute('target');});
-      if(clone.tagName==='A') clone.href='./pulse.html';
-      if(!clone.querySelector('a')&&clone.tagName!=='A'){
-        clone.style.cursor='pointer';
-        clone.addEventListener('click',function(e){e.preventDefault();window.location.href='./pulse.html';});
-      }
-      list.insertBefore(clone,row);
+      if(target) break;
     }
-  },500);
+    if(!target){ov.style.display='none';return;}
+    var item=target;
+    for(var j=0;j<6;j++){
+      var p=item.parentElement;
+      if(!p) break;
+      var pr=p.getBoundingClientRect();
+      if(pr.width>item.getBoundingClientRect().width*1.3){break;}
+      item=p;
+    }
+    var br=item.getBoundingClientRect();
+    ov.style.display='flex';
+    ov.style.top=(br.top-br.height)+'px';
+    ov.style.left=br.left+'px';
+    ov.style.width=br.width+'px';
+    ov.style.height=br.height+'px';
+  }
+  requestAnimationFrame(check);
 })();
     }
   },500);
