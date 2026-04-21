@@ -117,9 +117,12 @@
     /* ── MAIN LAYOUT ─────────────────────────────────── */
     main {
       padding-top: 60px;
-      max-width: 480px;
+      max-width: 1240px;
       margin: 0 auto;
     }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    @media (min-width: 768px) { .wrap { padding: 0 40px; } }
+    @media (min-width: 1024px) { .wrap { padding: 0 60px; } }
 
     /* ── HERO ────────────────────────────────────────── */
     .hero {
@@ -127,6 +130,17 @@
       overflow: hidden;
       background: linear-gradient(160deg, #0d2218 0%, #080f0b 60%);
       padding: 40px 20px 32px;
+    }
+    @media (min-width: 768px) { .hero { padding: 72px 40px 56px; } }
+    @media (min-width: 1024px) {
+      .hero { padding: 96px 60px 80px; }
+      .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center; }
+      .hero-title { font-size: 56px !important; }
+      .hero-subtitle { font-size: 17px !important; margin-bottom: 0 !important; }
+      .score-ring-wrap { margin-top: 0 !important; }
+      .ring-container { width: 200px !important; height: 200px !important; }
+      .ring-container svg { width: 200px !important; height: 200px !important; }
+      .ring-score { font-size: 52px !important; }
     }
     .hero-bg {
       position: absolute;
@@ -248,7 +262,9 @@
     }
 
     /* ── SECTION COMMON ──────────────────────────────── */
-    .section { padding: 24px 20px; }
+    .section { padding: 24px 20px; max-width: 1240px; margin: 0 auto; }
+    @media (min-width: 768px) { .section { padding: 40px 40px; } }
+    @media (min-width: 1024px) { .section { padding: 56px 60px; } .section-title { font-size: 16px !important; margin-bottom: 28px !important; } }
     .section-title {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
@@ -274,6 +290,18 @@
       flex-shrink: 0;
       object-fit: cover;
       object-position: center top;
+    }
+    @media (min-width: 768px) {
+      .insight-img { width: 240px; }
+      .insight-body { padding: 32px !important; }
+      .insight-title { font-size: 22px !important; }
+      .insight-text { font-size: 14px !important; }
+      .insight-tag { font-size: 11px !important; padding: 5px 12px !important; }
+    }
+    @media (min-width: 1024px) {
+      .insight-img { width: 320px; }
+      .insight-title { font-size: 26px !important; line-height: 1.25 !important; }
+      .insight-text { font-size: 15px !important; }
     }
     .insight-body {
       padding: 18px 16px;
@@ -310,6 +338,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
+    }
+    @media (min-width: 768px) { .metrics-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+    @media (min-width: 1024px) {
+      .metrics-grid { gap: 20px; }
+      .metric-card { padding: 24px; }
+      .metric-val { font-size: 32px !important; }
+      .metric-icon { font-size: 28px !important; margin-bottom: 14px !important; }
     }
     .metric-card {
       background: var(--card);
@@ -368,6 +403,14 @@
       display: flex;
       align-items: center;
       gap: 20px;
+    }
+    @media (min-width: 768px) {
+      .streak-card { padding: 32px 40px; gap: 32px; }
+      .streak-flame { font-size: 64px !important; }
+      .streak-count { font-size: 44px !important; }
+      .streak-label { font-size: 16px !important; }
+      .streak-sub { font-size: 13px !important; }
+      .day-dot { width: 36px !important; height: 36px !important; font-size: 12px !important; }
     }
     .streak-flame {
       font-size: 44px;
@@ -430,6 +473,15 @@
       overflow: hidden;
       position: relative;
     }
+    @media (min-width: 768px) {
+      .photo-band { padding: 0 40px 4px; gap: 16px; }
+      .photo-card { width: 180px; height: 240px; border-radius: 18px; }
+      .photo-card-label { font-size: 12px !important; padding: 14px !important; }
+    }
+    @media (min-width: 1024px) {
+      .photo-band { padding: 0 60px 4px; gap: 20px; max-width: 1240px; margin: 0 auto; }
+      .photo-card { width: 220px; height: 300px; }
+    }
     .photo-card img {
       width: 100%; height: 100%;
       object-fit: cover;
@@ -452,6 +504,12 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
+    }
+    @media (min-width: 768px) { .services-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+    @media (min-width: 1024px) {
+      .service-card { padding: 24px 20px; min-height: 140px; }
+      .service-icon { font-size: 32px !important; }
+      .service-name { font-size: 15px !important; }
     }
     .service-card {
       background: var(--card);
@@ -549,11 +607,14 @@
   <!-- ── HERO ── -->
   <section class="hero">
     <div class="hero-bg"></div>
+    <div class="hero-inner">
+    <div class="hero-copy">
     <p class="hero-date">Lundi 20 Avril 2026</p>
     <h1 class="hero-title">Votre <span>Pulse</span><br>du jour</h1>
     <p class="hero-subtitle">Score de santé global personnalisé</p>
+    </div>
 
-    <div class="score-ring-wrap">
+    <div class="score-ring-wrap" style="margin-top:32px">
       <div class="ring-container">
         <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -603,6 +664,7 @@
           <div class="legend-val" style="color:#3ab885">84</div>
         </div>
       </div>
+    </div>
     </div>
   </section>
 
