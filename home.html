@@ -349,30 +349,28 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
 </style><!-- SnippetEnd: Hbu5460jC --><!-- End of bodyEnd -->
 <script>
 (function(){
-  function findMenuRow(el){
-    var node=el;
-    for(var lvl=0;lvl<8;lvl++){
-      var p=node.parentElement;
-      if(!p||p===document.body||p===document.documentElement) return null;
-      var sibs=p.children;
-      for(var s=0;s<sibs.length;s++){
-        if(sibs[s]===node) continue;
-        var t=(sibs[s].textContent||'').trim();
-        if(t==='Testimonials'||t==='Our Doctors'||t==='Care Coaching') return {row:node,list:p};
-      }
-      node=p;
-    }
-    return null;
-  }
   setInterval(function(){
     var tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);
     var n;
     while((n=tw.nextNode())){
       if(!n.nodeValue||n.nodeValue.trim()!=='Weight Loss') continue;
-      var info=findMenuRow(n.parentElement);
-      if(!info) continue;
-      if(info.list.querySelector('[data-pulse]')) continue;
-      var clone=info.row.cloneNode(true);
+      var row=n.parentElement;
+      var list=null;
+      for(var lvl=0;lvl<12;lvl++){
+        var p=row.parentElement;
+        if(!p||p===document.body) break;
+        var sibs=p.children;
+        var found=false;
+        for(var s=0;s<sibs.length;s++){
+          if(sibs[s]===row) continue;
+          var t=sibs[s].textContent||'';
+          if(t.indexOf('Testimonials')!==-1){found=true;break;}
+        }
+        if(found){list=p;break;}
+        row=p;
+      }
+      if(!list||list.querySelector('[data-pulse]')) continue;
+      var clone=row.cloneNode(true);
       clone.setAttribute('data-pulse','1');
       var cw=document.createTreeWalker(clone,NodeFilter.SHOW_TEXT,null,false);
       var cn;
@@ -385,9 +383,10 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
         clone.style.cursor='pointer';
         clone.addEventListener('click',function(e){e.preventDefault();window.location.href='./pulse.html';});
       }
-      info.list.insertBefore(clone,info.row);
+      list.insertBefore(clone,row);
     }
   },500);
+})();
     }
   },500);
 })();
