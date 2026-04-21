@@ -355,7 +355,7 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
     var tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
     var n;
     while((n = tw.nextNode())){
-      if(n.nodeValue && n.nodeValue.trim() === 'Perte de poids'){
+      if(n.nodeValue && n.nodeValue.trim() === 'Weight Loss'){
         var textEl = n.parentElement;
         var item = textEl;
         for(var i=0;i<8;i++){
@@ -367,7 +367,7 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
         var cw = document.createTreeWalker(clone, NodeFilter.SHOW_TEXT, null, false);
         var cn;
         while((cn = cw.nextNode())){
-          if(cn.nodeValue.trim() === 'Perte de poids'){ cn.nodeValue = 'Pulse'; break; }
+          if(cn.nodeValue.trim() === 'Weight Loss'){ cn.nodeValue = 'Pulse'; break; }
         }
         clone.querySelectorAll('a').forEach(function(a){ a.href='./pulse.html'; a.removeAttribute('target'); });
         if(!clone.querySelector('a')){
