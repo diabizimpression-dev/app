@@ -350,13 +350,23 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
 <script>
 (function(){
   setInterval(function(){
-    var els = document.querySelectorAll('a, div, li, [role="menuitem"]');
-    for(var i=0;i<els.length;i++){
-      var el = els[i];
-      var kids = el.children;
-      var txt = el.textContent && el.textContent.trim();
-      if(txt !== 'Weight Loss') continue;
+    var all = document.querySelectorAll('a, div, li, [role="menuitem"]');
+    for(var i=0;i<all.length;i++){
+      var el = all[i];
+      if(!el.textContent || el.textContent.trim() !== 'Weight Loss') continue;
       if(!el.offsetParent && el.offsetWidth === 0) continue;
+      // Only target hamburger menu: must be inside a container that also has Testimonials + Our Doctors + Care Coaching
+      var ancestor = el.parentElement;
+      var isMenu = false;
+      for(var j=0;j<15;j++){
+        if(!ancestor) break;
+        var txt = ancestor.textContent || '';
+        if(txt.indexOf('Testimonials') !== -1 && txt.indexOf('Our Doctors') !== -1 && txt.indexOf('Care Coaching') !== -1){
+          isMenu = true; break;
+        }
+        ancestor = ancestor.parentElement;
+      }
+      if(!isMenu) continue;
       var parent = el.parentElement;
       if(!parent) continue;
       if(parent.querySelector('[data-pulse]')) continue;
