@@ -349,39 +349,33 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
 </style><!-- SnippetEnd: Hbu5460jC --><!-- End of bodyEnd -->
 <script>
 (function(){
-  var injected = false;
-  function tryInject(){
-    if(injected) return;
-    var tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-    var n;
-    while((n = tw.nextNode())){
-      if(n.nodeValue && n.nodeValue.trim() === 'Weight Loss'){
-        var textEl = n.parentElement;
-        var item = textEl;
-        for(var i=0;i<8;i++){
-          if(item.parentElement && item.parentElement.children.length > 1) break;
-          item = item.parentElement;
-        }
-        var list = item.parentElement;
-        var clone = item.cloneNode(true);
-        var cw = document.createTreeWalker(clone, NodeFilter.SHOW_TEXT, null, false);
-        var cn;
-        while((cn = cw.nextNode())){
-          if(cn.nodeValue.trim() === 'Weight Loss'){ cn.nodeValue = 'Pulse'; break; }
-        }
-        clone.querySelectorAll('a').forEach(function(a){ a.href='./pulse.html'; a.removeAttribute('target'); });
-        if(!clone.querySelector('a')){
-          clone.style.cursor='pointer';
-          clone.onclick=function(){ window.location.href='./pulse.html'; };
-        }
-        list.insertBefore(clone, item);
-        injected = true;
-        return;
+  setInterval(function(){
+    var els = document.querySelectorAll('a, div, li, [role="menuitem"]');
+    for(var i=0;i<els.length;i++){
+      var el = els[i];
+      var kids = el.children;
+      var txt = el.textContent && el.textContent.trim();
+      if(txt !== 'Weight Loss') continue;
+      if(!el.offsetParent && el.offsetWidth === 0) continue;
+      var parent = el.parentElement;
+      if(!parent) continue;
+      if(parent.querySelector('[data-pulse]')) continue;
+      var clone = el.cloneNode(true);
+      clone.setAttribute('data-pulse','1');
+      var tw = document.createTreeWalker(clone, NodeFilter.SHOW_TEXT, null, false);
+      var n;
+      while((n = tw.nextNode())){
+        if(n.nodeValue.trim() === 'Weight Loss'){ n.nodeValue = 'Pulse'; break; }
       }
+      clone.querySelectorAll('a').forEach(function(a){ a.href='./pulse.html'; a.removeAttribute('target'); });
+      if(clone.tagName === 'A') clone.href = './pulse.html';
+      if(!clone.querySelector('a') && clone.tagName !== 'A'){
+        clone.style.cursor='pointer';
+        clone.onclick=function(e){ e.preventDefault(); window.location.href='./pulse.html'; };
+      }
+      parent.insertBefore(clone, el);
     }
-  }
-  var obs = new MutationObserver(tryInject);
-  obs.observe(document.body,{childList:true,subtree:true});
+  }, 500);
 })();
 </script>
 </body>
