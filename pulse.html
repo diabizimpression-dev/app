@@ -574,6 +574,203 @@
       background: var(--border);
       margin: 0 20px;
     }
+
+    /* ── ACTION RECOMMANDEE ──────────────────────────── */
+    .action-reco {
+      background: linear-gradient(135deg, rgba(46,147,111,0.22) 0%, rgba(46,147,111,0.06) 100%);
+      border: 1px solid rgba(46,147,111,0.45);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .action-reco::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(135deg, rgba(58,184,133,0.4), transparent 70%);
+      z-index: -1;
+      filter: blur(24px);
+    }
+    .action-reco-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .action-reco-badge {
+      background: rgba(46,147,111,0.25);
+      border: 1px solid rgba(46,147,111,0.5);
+      color: var(--green-l);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .action-reco-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      margin-bottom: 14px;
+    }
+    .action-reco-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .action-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      transition: all .25s ease;
+      cursor: pointer;
+    }
+    .action-item:hover {
+      background: rgba(46,147,111,0.12);
+      border-color: rgba(46,147,111,0.4);
+      transform: translateY(-1px);
+    }
+    .action-item-icon {
+      font-size: 22px;
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .action-item-text { flex: 1; }
+    .action-item-name { font-size: 14px; font-weight: 600; color: white; }
+    .action-item-duration { font-size: 11px; color: var(--muted); margin-top: 1px; }
+    .action-item-arrow { color: var(--green-l); font-size: 16px; }
+    .action-cta {
+      display: block;
+      width: 100%;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      font-family: 'Onest', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s ease;
+      text-align: center;
+      text-decoration: none;
+    }
+    .action-cta:hover { background: var(--green-l); transform: translateY(-1px); box-shadow: 0 8px 22px rgba(46,147,111,0.35); }
+    @media (min-width: 768px) {
+      .action-reco { margin: 32px 40px; padding: 28px 32px; }
+      .action-reco-title { font-size: 20px; }
+      .action-reco-list { flex-direction: row; gap: 12px; }
+      .action-item { flex: 1; flex-direction: column; align-items: flex-start; padding: 16px; }
+      .action-item-arrow { display: none; }
+      .action-cta { max-width: 280px; margin: 0 auto; }
+    }
+    @media (min-width: 1024px) {
+      .action-reco { margin: 40px auto; max-width: 1120px; padding: 36px 40px; }
+      .action-reco-title { font-size: 22px; }
+    }
+
+    /* ── METRIC STATUS ────────────────────────────────── */
+    .metric-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .metric-status.ok   { background: rgba(58,184,133,0.15); color: #3ab885; border: 1px solid rgba(58,184,133,0.35); }
+    .metric-status.warn { background: rgba(232,168,76,0.15); color: var(--orange); border: 1px solid rgba(232,168,76,0.35); }
+    .metric-status.bad  { background: rgba(224,100,86,0.15); color: var(--red);    border: 1px solid rgba(224,100,86,0.35); }
+    .metric-tip {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 6px;
+      line-height: 1.35;
+    }
+    .metric-card { transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+    .metric-card:hover { transform: translateY(-2px); border-color: rgba(46,147,111,0.35); background: rgba(46,147,111,0.04); }
+
+    /* ── INSIGHT UPGRADES ────────────────────────────── */
+    .insight-impact {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--red);
+      font-weight: 600;
+      background: rgba(224,100,86,0.1);
+      border: 1px solid rgba(224,100,86,0.3);
+      border-radius: 6px;
+      padding: 3px 8px;
+    }
+    .insight-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      background: var(--green);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .2s ease;
+      border: none;
+      cursor: pointer;
+      font-family: 'Onest', sans-serif;
+    }
+    .insight-cta:hover { background: var(--green-l); box-shadow: 0 6px 16px rgba(46,147,111,0.3); }
+
+    /* ── STREAK UPGRADES ─────────────────────────────── */
+    .streak-progress {
+      margin-top: 14px;
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .streak-progress-fill {
+      height: 100%;
+      width: 41.6%;
+      background: linear-gradient(90deg, #e8a84c, #3ab885);
+      border-radius: 3px;
+      transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .streak-motivation {
+      font-size: 12px;
+      color: var(--orange);
+      font-weight: 600;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── HOVER GLOW ON SERVICE CARDS ─────────────────── */
+    .service-card { transition: transform .25s, background .25s, border-color .25s, box-shadow .25s; }
+    .service-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(46,147,111,0.12); }
+
+    /* ── PULSE ANIMATION ON RING ─────────────────────── */
+    @keyframes ringGlow {
+      0%, 100% { filter: drop-shadow(0 0 8px rgba(46,147,111,0.3)); }
+      50%      { filter: drop-shadow(0 0 18px rgba(46,147,111,0.55)); }
+    }
+    .ring-container svg { animation: ringGlow 3s ease-in-out infinite; }
   </style>
 </head>
 <body>
@@ -609,9 +806,9 @@
     <div class="hero-bg"></div>
     <div class="hero-inner">
     <div class="hero-copy">
-    <p class="hero-date">Lundi 20 Avril 2026</p>
-    <h1 class="hero-title">Votre <span>Pulse</span><br>du jour</h1>
-    <p class="hero-subtitle">Score de santé global personnalisé</p>
+    <p class="hero-date">Lundi 20 Avril 2026 · État du jour</p>
+    <h1 class="hero-title">Votre corps est en<br><span>récupération active</span></h1>
+    <p class="hero-subtitle">⚠ Stress élevé détecté — priorité au repos aujourd'hui</p>
     </div>
 
     <div class="score-ring-wrap" style="margin-top:32px">
@@ -668,6 +865,41 @@
     </div>
   </section>
 
+  <!-- ── ACTION RECOMMANDEE ── -->
+  <section class="action-reco">
+    <div class="action-reco-head">
+      <span class="action-reco-badge">Recommandé</span>
+    </div>
+    <h2 class="action-reco-title">Action recommandée pour aujourd'hui</h2>
+    <div class="action-reco-list">
+      <div class="action-item">
+        <div class="action-item-icon">🧘</div>
+        <div class="action-item-text">
+          <div class="action-item-name">Respiration guidée</div>
+          <div class="action-item-duration">5 min · Réduction du cortisol</div>
+        </div>
+        <div class="action-item-arrow">→</div>
+      </div>
+      <div class="action-item">
+        <div class="action-item-icon">🚶</div>
+        <div class="action-item-text">
+          <div class="action-item-name">Marche légère</div>
+          <div class="action-item-duration">20 min · En extérieur</div>
+        </div>
+        <div class="action-item-arrow">→</div>
+      </div>
+      <div class="action-item">
+        <div class="action-item-icon">🛌</div>
+        <div class="action-item-text">
+          <div class="action-item-name">Coucher +30 min plus tôt</div>
+          <div class="action-item-duration">Objectif : 22h30</div>
+        </div>
+        <div class="action-item-arrow">→</div>
+      </div>
+    </div>
+    <a href="#" class="action-cta">Lancer maintenant</a>
+  </section>
+
   <div class="divider"></div>
 
   <!-- ── INSIGHT ── -->
@@ -681,7 +913,9 @@
       <div class="insight-body">
         <span class="insight-tag">⚠ Stress élevé</span>
         <h3 class="insight-title">Votre niveau de stress impacte la récupération</h3>
-        <p class="insight-text">Une séance de cohérence cardiaque de 5 minutes peut réduire votre cortisol de 20%.</p>
+        <p class="insight-text"><strong style="color:rgba(255,255,255,0.85)">Pourquoi ?</strong> Une fréquence cardiaque au repos élevée combinée à un sommeil court réduit votre récupération.</p>
+        <span class="insight-impact">Impact : -20% récupération</span>
+        <a href="#" class="insight-cta">Corriger en 5 min →</a>
       </div>
     </div>
   </section>
@@ -698,7 +932,8 @@
         <span class="metric-icon">🌙</span>
         <div class="metric-label">Sommeil</div>
         <div class="metric-val">6<span class="metric-unit">h 12</span></div>
-        <div class="metric-unit">Objectif : 7h30</div>
+        <span class="metric-status warn">⚠ Insuffisant</span>
+        <div class="metric-tip">+1h recommandée · Objectif 7h30</div>
       </div>
 
       <div class="metric-card normal">
@@ -706,7 +941,8 @@
         <span class="metric-icon">❤️</span>
         <div class="metric-label">Fréq. cardiaque</div>
         <div class="metric-val">68<span class="metric-unit"> bpm</span></div>
-        <div class="metric-unit">Zone optimale</div>
+        <span class="metric-status ok">✓ Stable</span>
+        <div class="metric-tip">Zone optimale au repos</div>
       </div>
 
       <div class="metric-card warn">
@@ -714,7 +950,8 @@
         <span class="metric-icon">👟</span>
         <div class="metric-label">Pas</div>
         <div class="metric-val">4.2<span class="metric-unit">k</span></div>
-        <div class="metric-unit">Objectif : 8 000</div>
+        <span class="metric-status warn">⚠ En dessous</span>
+        <div class="metric-tip">3800 pas pour atteindre 8000</div>
       </div>
 
       <div class="metric-card low">
@@ -722,7 +959,8 @@
         <span class="metric-icon">💧</span>
         <div class="metric-label">Hydratation</div>
         <div class="metric-val">1.2<span class="metric-unit">L</span></div>
-        <div class="metric-unit">Objectif : 2L</div>
+        <span class="metric-status bad">✕ Trop faible</span>
+        <div class="metric-tip">Buvez 800ml avant 18h</div>
       </div>
 
     </div>
@@ -764,7 +1002,9 @@
       <div class="streak-info">
         <div class="streak-count">5 <span>jours</span></div>
         <div class="streak-label">Série en cours</div>
-        <div class="streak-sub">Continuez — votre meilleur : 12 jours</div>
+        <div class="streak-sub">Meilleur record : 12 jours</div>
+        <div class="streak-progress"><div class="streak-progress-fill"></div></div>
+        <div class="streak-motivation">🎯 Encore 7 jours pour battre votre record</div>
       </div>
       <div>
         <div class="streak-days">
