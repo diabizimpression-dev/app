@@ -771,6 +771,146 @@
       50%      { filter: drop-shadow(0 0 18px rgba(46,147,111,0.55)); }
     }
     .ring-container svg { animation: ringGlow 3s ease-in-out infinite; }
+
+    /* ── FAB BUTTON ──────────────────────────────────── */
+    .fab {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 200;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 6px 24px rgba(46,147,111,0.4);
+      transition: all .25s ease;
+    }
+    .fab:hover { background: var(--green-l); transform: scale(1.08); box-shadow: 0 8px 32px rgba(46,147,111,0.55); }
+    .fab.open { transform: rotate(45deg); background: var(--red); box-shadow: 0 6px 24px rgba(224,100,86,0.4); }
+
+    /* ── CHECK-IN MODAL ──────────────────────────────── */
+    .checkin-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 300;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .checkin-overlay.active { display: flex; }
+    .checkin-panel {
+      width: 100%;
+      max-width: 480px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 24px 24px 0 0;
+      padding: 28px 24px 36px;
+      animation: slideUp .3s ease;
+    }
+    @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    @media (min-width: 768px) {
+      .checkin-overlay { align-items: center; }
+      .checkin-panel { border-radius: 24px; max-width: 440px; padding: 36px 32px 40px; }
+    }
+    .checkin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .checkin-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .checkin-close {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--muted);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      transition: all .2s;
+    }
+    .checkin-close:hover { background: rgba(224,100,86,0.15); color: var(--red); }
+    .checkin-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .checkin-row:last-of-type { margin-bottom: 0; }
+    .checkin-emoji { font-size: 22px; width: 32px; text-align: center; flex-shrink: 0; }
+    .checkin-label { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7); min-width: 65px; }
+    .checkin-slider-wrap { flex: 1; display: flex; align-items: center; gap: 10px; }
+    .checkin-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      flex: 1;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.1);
+      outline: none;
+    }
+    .checkin-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--green);
+      cursor: pointer;
+      border: 2px solid var(--green-l);
+      box-shadow: 0 2px 8px rgba(46,147,111,0.4);
+      transition: all .15s;
+    }
+    .checkin-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+    .checkin-slider::-moz-range-thumb {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--green);
+      cursor: pointer;
+      border: 2px solid var(--green-l);
+    }
+    .checkin-val {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      min-width: 24px;
+      text-align: right;
+      color: var(--green-l);
+    }
+    .checkin-submit {
+      display: block;
+      width: 100%;
+      margin-top: 28px;
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      padding: 16px;
+      font-family: 'Onest', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .checkin-submit:hover { background: var(--green-l); box-shadow: 0 8px 24px rgba(46,147,111,0.35); }
+    .checkin-done {
+      text-align: center;
+      padding: 20px 0 10px;
+      display: none;
+    }
+    .checkin-done.show { display: block; }
+    .checkin-done-icon { font-size: 48px; margin-bottom: 12px; }
+    .checkin-done-text { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .checkin-done-sub { font-size: 13px; color: var(--muted); }
   </style>
 </head>
 <body>
@@ -1062,6 +1202,31 @@
 
 </main>
 
+<!-- FAB -->
+<button class="fab" id="fabBtn" aria-label="Check-in quotidien">+</button>
+
+<!-- CHECK-IN MODAL -->
+<div class="checkin-overlay" id="checkinOverlay">
+  <div class="checkin-panel">
+    <div class="checkin-header">
+      <h2 class="checkin-title">Check-in du jour</h2>
+      <button class="checkin-close" id="checkinClose">✕</button>
+    </div>
+    <div id="checkinForm">
+      <div class="checkin-row"><span class="checkin-emoji">😊</span><span class="checkin-label">Humeur</span><div class="checkin-slider-wrap"><input type="range" class="checkin-slider" min="1" max="10" value="7" data-ci="humeur"><span class="checkin-val">7</span></div></div>
+      <div class="checkin-row"><span class="checkin-emoji">⚡</span><span class="checkin-label">Énergie</span><div class="checkin-slider-wrap"><input type="range" class="checkin-slider" min="1" max="10" value="6" data-ci="energie"><span class="checkin-val">6</span></div></div>
+      <div class="checkin-row"><span class="checkin-emoji">😵</span><span class="checkin-label">Stress</span><div class="checkin-slider-wrap"><input type="range" class="checkin-slider" min="1" max="10" value="5" data-ci="stress"><span class="checkin-val">5</span></div></div>
+      <div class="checkin-row"><span class="checkin-emoji">💤</span><span class="checkin-label">Sommeil</span><div class="checkin-slider-wrap"><input type="range" class="checkin-slider" min="1" max="10" value="6" data-ci="sommeil"><span class="checkin-val">6</span></div></div>
+      <button class="checkin-submit" id="checkinSubmit">Valider mon check-in ✓</button>
+    </div>
+    <div class="checkin-done" id="checkinDone">
+      <div class="checkin-done-icon">✅</div>
+      <div class="checkin-done-text">Check-in enregistré</div>
+      <div class="checkin-done-sub">Votre score Pulse a été mis à jour</div>
+    </div>
+  </div>
+</div>
+
 <script>
   // Animate ring on load
   document.addEventListener('DOMContentLoaded', function() {
@@ -1073,6 +1238,26 @@
       }, 100);
     }
   });
+  // Check-in modal
+  var fab=document.getElementById('fabBtn'),ov=document.getElementById('checkinOverlay'),cl=document.getElementById('checkinClose'),frm=document.getElementById('checkinForm'),done=document.getElementById('checkinDone'),sub=document.getElementById('checkinSubmit');
+  function openCI(){ov.classList.add('active');fab.classList.add('open');frm.style.display='';done.className='checkin-done';}
+  function closeCI(){ov.classList.remove('active');fab.classList.remove('open');}
+  fab.onclick=function(){ov.classList.contains('active')?closeCI():openCI();};
+  cl.onclick=closeCI;
+  ov.onclick=function(e){if(e.target===ov)closeCI();};
+  document.querySelectorAll('.checkin-slider').forEach(function(s){
+    var v=s.parentElement.querySelector('.checkin-val');
+    s.oninput=function(){v.textContent=s.value;};
+  });
+  sub.onclick=function(){
+    var data={};
+    document.querySelectorAll('.checkin-slider').forEach(function(s){data[s.dataset.ci]=+s.value;});
+    var h=JSON.parse(localStorage.getItem('soma_checkins')||'[]');
+    h.push({ts:Date.now(),d:data});
+    localStorage.setItem('soma_checkins',JSON.stringify(h));
+    frm.style.display='none';done.className='checkin-done show';
+    setTimeout(closeCI,1800);
+  };
 </script>
 
 </body>
