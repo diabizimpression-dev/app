@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pulse — MEDVi</title>
-  <meta name="description" content="Votre score de santé quotidien. Suivez votre énergie, stress et récupération avec Pulse by MEDVi.">
+  <title>Pulse — Soma</title>
+  <meta name="description" content="Votre score de santé quotidien. Suivez votre énergie, stress et récupération avec Pulse by Soma.">
   <link href="https://framerusercontent.com/images/xWKyg85eDVm8FJeXNodQY3RoGpE.png" rel="icon">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
@@ -911,6 +911,19 @@
     .checkin-done-icon { font-size: 48px; margin-bottom: 12px; }
     .checkin-done-text { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
     .checkin-done-sub { font-size: 13px; color: var(--muted); }
+
+    /* ── PRO UX UPGRADES ─────────────────────────────── */
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+      .ring-container svg{animation:none!important}
+    }
+    :focus-visible{outline:2px solid var(--green-l);outline-offset:2px;border-radius:4px}
+    .i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+    .metric-icon-wrap{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+    .metric-card.normal .metric-icon-wrap{background:rgba(58,184,133,.12)}
+    .metric-card.low .metric-icon-wrap{background:rgba(232,168,76,.12)}
+    .metric-card.warn .metric-icon-wrap{background:rgba(224,100,86,.12)}
+    .service-icon-wrap{width:44px;height:44px;border-radius:12px;background:rgba(46,147,111,.1);display:flex;align-items:center;justify-content:center;color:var(--green-l)}
   </style>
 </head>
 <body>
@@ -1069,7 +1082,7 @@
 
       <div class="metric-card low">
         <span class="metric-trend">↓</span>
-        <span class="metric-icon">🌙</span>
+        <div class="metric-icon-wrap"><svg class="i" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
         <div class="metric-label">Sommeil</div>
         <div class="metric-val">6<span class="metric-unit">h 12</span></div>
         <span class="metric-status warn">⚠ Insuffisant</span>
@@ -1078,7 +1091,7 @@
 
       <div class="metric-card normal">
         <span class="metric-trend" style="color:var(--green-l)">→</span>
-        <span class="metric-icon">❤️</span>
+        <div class="metric-icon-wrap"><svg class="i" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
         <div class="metric-label">Fréq. cardiaque</div>
         <div class="metric-val">68<span class="metric-unit"> bpm</span></div>
         <span class="metric-status ok">✓ Stable</span>
@@ -1087,7 +1100,7 @@
 
       <div class="metric-card warn">
         <span class="metric-trend" style="color:var(--red)">↓</span>
-        <span class="metric-icon">👟</span>
+        <div class="metric-icon-wrap"><svg class="i" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
         <div class="metric-label">Pas</div>
         <div class="metric-val">4.2<span class="metric-unit">k</span></div>
         <span class="metric-status warn">⚠ En dessous</span>
@@ -1096,7 +1109,7 @@
 
       <div class="metric-card low">
         <span class="metric-trend">↓</span>
-        <span class="metric-icon">💧</span>
+        <div class="metric-icon-wrap"><svg class="i" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
         <div class="metric-label">Hydratation</div>
         <div class="metric-val">1.2<span class="metric-unit">L</span></div>
         <span class="metric-status bad">✕ Trop faible</span>
@@ -1167,27 +1180,27 @@
     <p class="section-title">Services MEDVi</p>
     <div class="services-grid">
       <a href="./glp.html" class="service-card">
-        <span class="service-icon">⚖️</span>
+        <div class="service-icon-wrap"><svg class="i" viewBox="0 0 24 24"><path d="M16 16v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/><line x1="12" y1="12" x2="22" y2="12"/></svg></div>
         <span class="service-name">Perte de poids</span>
         <span class="service-arrow">→ Voir le programme</span>
       </a>
       <a href="./meals.html" class="service-card">
-        <span class="service-icon">🥗</span>
+        <div class="service-icon-wrap"><svg class="i" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
         <span class="service-name">Repas MEDVi</span>
         <span class="service-arrow">→ Explorer les repas</span>
       </a>
       <a href="./quad.html" class="service-card">
-        <span class="service-icon">💪</span>
+        <div class="service-icon-wrap"><svg class="i" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <span class="service-name">QUAD</span>
         <span class="service-arrow">→ Entraînement</span>
       </a>
       <a href="./analyse.html" class="service-card">
-        <span class="service-icon">📊</span>
+        <div class="service-icon-wrap"><svg class="i" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
         <span class="service-name">Analyse</span>
         <span class="service-arrow">→ Tendances 7j</span>
       </a>
       <a href="./home.html" class="service-card">
-        <span class="service-icon">🏠</span>
+        <div class="service-icon-wrap"><svg class="i" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
         <span class="service-name">MEDVi Home</span>
         <span class="service-arrow">→ Accueil</span>
       </a>
@@ -1196,7 +1209,7 @@
 
   <!-- ── FOOTER ── -->
   <footer>
-    <div class="footer-logo">MEDVi</div>
+    <div class="footer-logo">Soma</div>
     <p class="footer-text">Soins de santé personnalisés, guidés par des cliniciens.</p>
     <div class="footer-links">
       <a href="./home.html">Accueil</a>
