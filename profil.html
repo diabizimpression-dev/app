@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Profil — Soma</title>
+<link href="https://framerusercontent.com/images/xWKyg85eDVm8FJeXNodQY3RoGpE.png" rel="icon">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080f0b;--bg2:#0d1a12;--bg3:#111f17;--green:#2e936f;--green-l:#3ab885;--green-d:#1e6b4f;--orange:#e8a84c;--red:#e06456;--white:#fff;--muted:rgba(255,255,255,.5);--border:rgba(46,147,111,.18);--card:rgba(255,255,255,.04);--radius:16px;--radius-sm:10px}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Onest',sans-serif;font-size:16px;line-height:1.5;min-height:100vh;-webkit-font-smoothing:antialiased}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+:focus-visible{outline:2px solid var(--green-l);outline-offset:2px;border-radius:4px}
+.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:60px;background:rgba(8,15,11,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--white)}
+.logo-icon{width:28px;height:28px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.logo-icon svg{width:16px;height:16px;fill:white}
+.logo-text{font-family:'Montserrat',sans-serif;font-weight:800;font-size:17px;letter-spacing:-.3px}
+.logo-sub{font-size:10px;font-weight:600;color:var(--green-l);letter-spacing:1.5px;text-transform:uppercase;margin-left:4px;opacity:.85}
+.back-btn{width:36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;color:var(--muted);transition:all .2s}
+.back-btn:hover{background:rgba(46,147,111,.15);color:var(--white)}
+.back-btn svg{width:18px;height:18px}
+
+main{padding-top:60px;max-width:800px;margin:0 auto}
+.section{padding:24px 20px}
+@media(min-width:768px){.section{padding:40px}}
+.section-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.divider{height:1px;background:var(--border);margin:0 20px}
+
+.profile-hero{text-align:center;padding:48px 20px 32px}
+.avatar{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-l));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:36px;font-weight:800;font-family:'Montserrat',sans-serif;color:white;border:3px solid rgba(58,184,133,.3)}
+.profile-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;margin-bottom:4px}
+.profile-email{font-size:13px;color:var(--muted)}
+.profile-stats{display:flex;justify-content:center;gap:32px;margin-top:20px}
+.pstat{text-align:center}
+.pstat-val{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;color:var(--green-l)}
+.pstat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+
+.info-row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.info-row:last-child{border-bottom:none}
+.info-left{display:flex;align-items:center;gap:12px}
+.info-icon{width:36px;height:36px;border-radius:10px;background:rgba(46,147,111,.1);display:flex;align-items:center;justify-content:center;color:var(--green-l)}
+.info-label{font-size:13px;color:var(--muted)}
+.info-val{font-size:14px;font-weight:600}
+.info-edit{font-size:12px;color:var(--green-l);cursor:pointer;font-weight:600;background:none;border:none;font-family:'Onest',sans-serif}
+.info-edit:hover{color:var(--white)}
+
+.device-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;display:flex;align-items:center;gap:16px;margin-bottom:12px;transition:all .25s;cursor:pointer}
+.device-card:hover{border-color:rgba(46,147,111,.35);transform:translateY(-2px)}
+.device-logo{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:24px}
+.device-logo.apple{background:rgba(255,255,255,.08)}
+.device-logo.fitbit{background:rgba(0,184,148,.12)}
+.device-logo.garmin{background:rgba(0,120,215,.12)}
+.device-logo.samsung{background:rgba(52,73,94,.15)}
+.device-logo.whoop{background:rgba(255,59,48,.1)}
+.device-logo.oura{background:rgba(168,130,255,.12)}
+.device-info{flex:1}
+.device-name{font-size:15px;font-weight:600;margin-bottom:2px}
+.device-desc{font-size:12px;color:var(--muted)}
+.device-status{padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;cursor:pointer;border:none;font-family:'Onest',sans-serif;transition:all .2s}
+.device-status.connect{background:var(--green);color:white}
+.device-status.connect:hover{background:var(--green-l);box-shadow:0 4px 16px rgba(46,147,111,.35)}
+.device-status.connected{background:rgba(58,184,133,.15);color:var(--green-l);border:1px solid rgba(58,184,133,.35)}
+.device-status.soon{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid rgba(255,255,255,.08)}
+
+.pref-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.pref-row:last-child{border-bottom:none}
+.pref-left{display:flex;align-items:center;gap:12px}
+.pref-icon{width:32px;height:32px;border-radius:8px;background:rgba(46,147,111,.1);display:flex;align-items:center;justify-content:center;color:var(--green-l)}
+.pref-name{font-size:14px;font-weight:500}
+.toggle{width:44px;height:24px;border-radius:12px;background:rgba(255,255,255,.12);border:none;cursor:pointer;position:relative;transition:background .2s}
+.toggle.on{background:var(--green)}
+.toggle::after{content:'';position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:white;transition:transform .2s}
+.toggle.on::after{transform:translateX(20px)}
+
+.danger-btn{display:block;width:100%;padding:14px;border-radius:12px;font-family:'Onest',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;margin-bottom:10px;border:none}
+.btn-logout{background:rgba(255,255,255,.06);color:var(--muted);border:1px solid rgba(255,255,255,.1)}
+.btn-logout:hover{background:rgba(255,255,255,.1);color:var(--white)}
+.btn-delete{background:rgba(224,100,86,.08);color:var(--red);border:1px solid rgba(224,100,86,.2)}
+.btn-delete:hover{background:rgba(224,100,86,.15)}
+
+.nav-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.nav-card{display:flex;flex-direction:column;gap:8px;padding:20px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:var(--white);transition:all .25s}
+.nav-card:hover{background:rgba(46,147,111,.1);border-color:rgba(46,147,111,.4);transform:translateY(-2px)}
+.nav-card-icon{font-size:28px}
+.nav-card-name{font-size:14px;font-weight:600}
+.nav-card-arrow{font-size:12px;color:var(--green-l);margin-top:auto}
+
+footer{padding:32px 20px 48px;text-align:center}
+.footer-logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;color:var(--green-l);margin-bottom:8px}
+.footer-text{font-size:12px;color:var(--muted)}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-top:16px}
+.footer-links a{font-size:12px;color:var(--muted);text-decoration:none}
+.footer-links a:hover{color:var(--green-l)}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="./pulse.html" class="logo">
+    <div class="logo-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2C5.6 2 2 5.6 2 10s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 3c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm2 9H8v-1h1V9H8V8h3v5h1v1z"/></svg></div>
+    <span class="logo-text">Soma</span>
+    <span class="logo-sub">Profil</span>
+  </a>
+  <a href="./pulse.html" class="back-btn" title="Retour"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></a>
+</header>
+
+<main>
+
+<div class="profile-hero">
+  <div class="avatar">S</div>
+  <div class="profile-name">Utilisateur Soma</div>
+  <div class="profile-email">user@soma.health</div>
+  <div class="profile-stats">
+    <div class="pstat"><div class="pstat-val">5</div><div class="pstat-label">Jours streak</div></div>
+    <div class="pstat"><div class="pstat-val">78</div><div class="pstat-label">Score moy.</div></div>
+    <div class="pstat"><div class="pstat-val">23</div><div class="pstat-label">Check-ins</div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section class="section">
+  <p class="section-title">Informations personnelles</p>
+  <div class="info-row">
+    <div class="info-left">
+      <div class="info-icon"><svg class="i" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div><div class="info-label">Nom</div><div class="info-val">Utilisateur Soma</div></div>
+    </div>
+    <button class="info-edit">Modifier</button>
+  </div>
+  <div class="info-row">
+    <div class="info-left">
+      <div class="info-icon"><svg class="i" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,7 12,13 2,7"/></svg></div>
+      <div><div class="info-label">Email</div><div class="info-val">user@soma.health</div></div>
+    </div>
+    <button class="info-edit">Modifier</button>
+  </div>
+  <div class="info-row">
+    <div class="info-left">
+      <div class="info-icon"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div><div class="info-label">Date de naissance</div><div class="info-val">15/03/1992</div></div>
+    </div>
+    <button class="info-edit">Modifier</button>
+  </div>
+  <div class="info-row">
+    <div class="info-left">
+      <div class="info-icon"><svg class="i" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div><div class="info-label">Localisation</div><div class="info-val">Paris, France</div></div>
+    </div>
+    <button class="info-edit">Modifier</button>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <p class="section-title">Appareils & Apps connectées</p>
+
+  <div class="device-card">
+    <div class="device-logo apple"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg></div>
+    <div class="device-info">
+      <div class="device-name">Apple Health</div>
+      <div class="device-desc">iPhone, Apple Watch — Sommeil, pas, FC</div>
+    </div>
+    <button class="device-status connect">Connecter</button>
+  </div>
+
+  <div class="device-card">
+    <div class="device-logo fitbit"><svg class="i" viewBox="0 0 24 24" style="color:#00b894"><circle cx="12" cy="4" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="20" r="2"/><circle cx="4" cy="12" r="1.5"/><circle cx="20" cy="12" r="1.5"/></svg></div>
+    <div class="device-info">
+      <div class="device-name">Fitbit</div>
+      <div class="device-desc">Charge, Versa, Sense — Activité, sommeil</div>
+    </div>
+    <button class="device-status connect">Connecter</button>
+  </div>
+
+  <div class="device-card">
+    <div class="device-logo garmin"><svg class="i" viewBox="0 0 24 24" style="color:#0078d7"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+    <div class="device-info">
+      <div class="device-name">Garmin</div>
+      <div class="device-desc">Forerunner, Venu — GPS, VO2max, stress</div>
+    </div>
+    <button class="device-status connect">Connecter</button>
+  </div>
+
+  <div class="device-card">
+    <div class="device-logo whoop"><svg class="i" viewBox="0 0 24 24" style="color:#ff3b30"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+    <div class="device-info">
+      <div class="device-name">WHOOP</div>
+      <div class="device-desc">Recovery, strain, sommeil avancé</div>
+    </div>
+    <button class="device-status connect">Connecter</button>
+  </div>
+
+  <div class="device-card">
+    <div class="device-logo oura"><svg class="i" viewBox="0 0 24 24" style="color:#a882ff"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div>
+    <div class="device-info">
+      <div class="device-name">Oura Ring</div>
+      <div class="device-desc">Readiness, sommeil, température</div>
+    </div>
+    <button class="device-status connect">Connecter</button>
+  </div>
+
+  <div class="device-card">
+    <div class="device-logo samsung"><svg class="i" viewBox="0 0 24 24" style="color:#8395a7"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+    <div class="device-info">
+      <div class="device-name">Samsung Health</div>
+      <div class="device-desc">Galaxy Watch — Pas, sommeil, FC</div>
+    </div>
+    <button class="device-status soon">Bientôt</button>
+  </div>
+
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <p class="section-title">Préférences</p>
+  <div class="pref-row">
+    <div class="pref-left">
+      <div class="pref-icon"><svg class="i" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+      <span class="pref-name">Notifications push</span>
+    </div>
+    <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+  </div>
+  <div class="pref-row">
+    <div class="pref-left">
+      <div class="pref-icon"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+      <span class="pref-name">Rappel check-in quotidien</span>
+    </div>
+    <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+  </div>
+  <div class="pref-row">
+    <div class="pref-left">
+      <div class="pref-icon"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+      <span class="pref-name">Données chiffrées (E2E)</span>
+    </div>
+    <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+  </div>
+  <div class="pref-row">
+    <div class="pref-left">
+      <div class="pref-icon"><svg class="i" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <span class="pref-name">Partage anonyme (recherche)</span>
+    </div>
+    <button class="toggle" onclick="this.classList.toggle('on')"></button>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <p class="section-title">Navigation</p>
+  <div class="nav-cards">
+    <a href="./pulse.html" class="nav-card"><span class="nav-card-icon"><svg class="i" style="width:28px;height:28px" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span><span class="nav-card-name">Pulse</span><span class="nav-card-arrow">→ Score du jour</span></a>
+    <a href="./analyse.html" class="nav-card"><span class="nav-card-icon"><svg class="i" style="width:28px;height:28px" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span><span class="nav-card-name">Analyse</span><span class="nav-card-arrow">→ Tendances 7j</span></a>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <button class="danger-btn btn-logout">Se déconnecter</button>
+  <button class="danger-btn btn-delete">Supprimer mon compte</button>
+</section>
+
+<footer>
+  <div class="footer-logo">Soma</div>
+  <p class="footer-text">Votre OS de santé personnel.</p>
+  <div class="footer-links"><a href="./pulse.html">Pulse</a><a href="#">Confidentialité</a><a href="#">Support</a></div>
+</footer>
+
+</main>
+</body>
+</html>
