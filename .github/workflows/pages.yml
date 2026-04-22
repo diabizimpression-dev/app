@@ -28,15 +28,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Create index redirect to pulse
+      - name: Create index redirect to landing
         run: |
           cat > _site_index.html <<'EOF'
           <!doctype html>
           <meta charset="utf-8">
-          <title>Redirecting to Pulse</title>
-          <meta http-equiv="refresh" content="0; url=./pulse.html">
-          <link rel="canonical" href="./pulse.html">
-          <p>Redirecting to <a href="./pulse.html">Pulse</a>...</p>
+          <title>Redirecting to SOMa</title>
+          <meta http-equiv="refresh" content="0; url=./landing.html">
+          <link rel="canonical" href="./landing.html">
+          <p>Redirecting to <a href="./landing.html">SOMa</a>...</p>
           EOF
 
       - name: Upload artifact
