@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Actions — Soma</title>
+<link href="https://framerusercontent.com/images/xWKyg85eDVm8FJeXNodQY3RoGpE.png" rel="icon">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#080f0b;--bg2:#0d1a12;--bg3:#111f17;--green:#2e936f;--green-l:#3ab885;--green-d:#1e6b4f;--orange:#e8a84c;--red:#e06456;--white:#fff;--muted:rgba(255,255,255,.5);--border:rgba(46,147,111,.18);--card:rgba(255,255,255,.04);--radius:16px;--radius-sm:10px}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:'Onest',sans-serif;font-size:16px;line-height:1.5;min-height:100vh;-webkit-font-smoothing:antialiased}
+
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:60px;background:rgba(8,15,11,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--white)}
+.logo-icon{width:28px;height:28px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.logo-icon svg{width:16px;height:16px;fill:white}
+.logo-text{font-family:'Montserrat',sans-serif;font-weight:800;font-size:17px;letter-spacing:-.3px}
+.logo-sub{font-size:10px;font-weight:600;color:var(--green-l);letter-spacing:1.5px;text-transform:uppercase;margin-left:4px;opacity:.85}
+.header-right{display:flex;align-items:center;gap:12px}
+.back-btn{width:36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;color:var(--muted);transition:all .2s}
+.back-btn:hover{background:rgba(46,147,111,.15);color:var(--white)}
+.back-btn svg{width:18px;height:18px}
+.badge-pulse{background:rgba(46,147,111,.15);border:1px solid rgba(46,147,111,.35);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--green-l);letter-spacing:.5px}
+
+main{padding-top:60px;max-width:1240px;margin:0 auto}
+.section{padding:24px 20px;max-width:1240px;margin:0 auto}
+@media(min-width:768px){.section{padding:40px}}
+@media(min-width:1024px){.section{padding:56px 60px}}
+.section-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+@media(min-width:1024px){.section-title{font-size:16px!important;margin-bottom:28px!important}}
+.divider{height:1px;background:var(--border);margin:0 20px}
+
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0d2218 0%,#080f0b 60%);padding:40px 20px 32px}
+@media(min-width:768px){.hero{padding:72px 40px 56px}}
+@media(min-width:1024px){.hero{padding:96px 60px 80px}}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 30%,rgba(46,147,111,.12) 0%,transparent 70%);pointer-events:none}
+.hero-date{font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.hero-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,7vw,36px);letter-spacing:-1px;margin-bottom:4px}
+.hero-title span{color:var(--green-l)}
+.hero-subtitle{font-size:14px;color:var(--muted);margin-bottom:0}
+@media(min-width:1024px){.hero-title{font-size:56px!important}.hero-subtitle{font-size:17px!important}}
+
+.filter-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.filter-tab{padding:8px 16px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Onest',sans-serif}
+.filter-tab.active{background:var(--green);color:white;border-color:var(--green)}
+.filter-tab:hover:not(.active){background:rgba(46,147,111,.1);border-color:rgba(46,147,111,.4)}
+
+.proto-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px;transition:all .25s;position:relative;overflow:hidden}
+.proto-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:3px 3px 0 0}
+.proto-card.cat-stress::before{background:var(--orange)}
+.proto-card.cat-sommeil::before{background:#7c6cfc}
+.proto-card.cat-energie::before{background:var(--green-l)}
+.proto-card.cat-focus::before{background:#4cc9f0}
+.proto-card:hover{border-color:rgba(46,147,111,.35);transform:translateY(-2px)}
+@media(min-width:768px){.protos-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}.proto-card{margin-bottom:0}}
+@media(min-width:1024px){.protos-list{grid-template-columns:repeat(3,1fr)}}
+
+.proto-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.proto-cat{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:20px}
+.cat-stress .proto-cat{background:rgba(232,168,76,.15);color:var(--orange);border:1px solid rgba(232,168,76,.35)}
+.cat-sommeil .proto-cat{background:rgba(124,108,252,.15);color:#7c6cfc;border:1px solid rgba(124,108,252,.35)}
+.cat-energie .proto-cat{background:rgba(58,184,133,.15);color:var(--green-l);border:1px solid rgba(58,184,133,.35)}
+.cat-focus .proto-cat{background:rgba(76,201,240,.15);color:#4cc9f0;border:1px solid rgba(76,201,240,.35)}
+.proto-duration{font-size:11px;color:var(--muted);font-weight:600}
+.proto-icon{font-size:32px;margin-bottom:10px}
+.proto-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;margin-bottom:6px}
+.proto-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:16px}
+.proto-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.proto-tag{font-size:10px;font-weight:600;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.08)}
+.proto-btn{display:block;width:100%;background:var(--green);color:white;border:none;border-radius:12px;padding:12px;font-family:'Onest',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;text-align:center;text-decoration:none}
+.proto-btn:hover{background:var(--green-l);box-shadow:0 8px 22px rgba(46,147,111,.35)}
+
+.daily-reco{background:linear-gradient(135deg,rgba(46,147,111,.22) 0%,rgba(46,147,111,.06) 100%);border:1px solid rgba(46,147,111,.45);border-radius:var(--radius);padding:24px;position:relative;overflow:hidden}
+.daily-reco::before{content:'';position:absolute;inset:-2px;background:linear-gradient(135deg,rgba(58,184,133,.4),transparent 70%);z-index:-1;filter:blur(24px)}
+.daily-reco-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:18px;margin-bottom:6px}
+.daily-reco-sub{font-size:13px;color:var(--muted);margin-bottom:16px}
+.daily-steps{counter-reset:step}
+.step{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);align-items:flex-start}
+.step:last-child{border-bottom:none}
+.step-num{counter-increment:step;width:28px;height:28px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.step-num::after{content:counter(step)}
+.step-text{flex:1}
+.step-name{font-size:14px;font-weight:600;margin-bottom:2px}
+.step-detail{font-size:12px;color:var(--muted)}
+.step-check{width:24px;height:24px;border-radius:50%;border:2px solid var(--border);background:transparent;cursor:pointer;flex-shrink:0;transition:all .2s;display:flex;align-items:center;justify-content:center;color:transparent;font-size:14px}
+.step-check.done{background:var(--green);border-color:var(--green);color:white}
+
+.progress-bar{margin-top:20px;height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green-l));border-radius:4px;transition:width .5s ease;width:0%}
+.progress-text{font-size:12px;color:var(--muted);margin-top:8px;text-align:right}
+
+.nav-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.nav-card{display:flex;flex-direction:column;gap:8px;padding:20px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:var(--white);transition:all .25s}
+.nav-card:hover{background:rgba(46,147,111,.1);border-color:rgba(46,147,111,.4);transform:translateY(-2px)}
+.nav-card-icon{font-size:28px}
+.nav-card-name{font-size:14px;font-weight:600}
+.nav-card-arrow{font-size:12px;color:var(--green-l);margin-top:auto}
+
+footer{padding:32px 20px 48px;text-align:center}
+.footer-logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;color:var(--green-l);margin-bottom:8px}
+.footer-text{font-size:12px;color:var(--muted)}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-top:16px}
+.footer-links a{font-size:12px;color:var(--muted);text-decoration:none}
+.footer-links a:hover{color:var(--green-l)}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="./pulse.html" class="logo">
+    <div class="logo-icon"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2C5.6 2 2 5.6 2 10s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 3c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm2 9H8v-1h1V9H8V8h3v5h1v1z"/></svg></div>
+    <span class="logo-text">Soma</span>
+    <span class="logo-sub">Actions</span>
+  </a>
+  <div class="header-right">
+    <span class="badge-pulse">Micro-protocoles</span>
+    <a href="./pulse.html" class="back-btn" title="Retour au Pulse"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <p class="hero-date">22 Avril 2026 · Protocoles personnalisés</p>
+  <h1 class="hero-title">Vos <span>micro-actions</span><br>du jour</h1>
+  <p class="hero-subtitle">Protocoles guidés de 2 à 15 min, adaptés à votre score Pulse</p>
+  <div class="filter-tabs">
+    <button class="filter-tab active" data-cat="all">Tous</button>
+    <button class="filter-tab" data-cat="stress">Stress</button>
+    <button class="filter-tab" data-cat="sommeil">Sommeil</button>
+    <button class="filter-tab" data-cat="energie">Énergie</button>
+    <button class="filter-tab" data-cat="focus">Focus</button>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <p class="section-title">Recommandé pour vous aujourd'hui</p>
+  <div class="daily-reco">
+    <div class="daily-reco-title">Plan du jour — 3 actions, 20 min</div>
+    <div class="daily-reco-sub">Basé sur votre score Pulse (82) et stress élevé détecté</div>
+    <div class="daily-steps">
+      <div class="step"><div class="step-num"></div><div class="step-text"><div class="step-name">Respiration 4-7-8</div><div class="step-detail">5 min · Réduit le cortisol de 23%</div></div><button class="step-check" onclick="this.classList.toggle('done');updateProgress()">✓</button></div>
+      <div class="step"><div class="step-num"></div><div class="step-text"><div class="step-name">Marche en pleine conscience</div><div class="step-detail">10 min · Extérieur recommandé</div></div><button class="step-check" onclick="this.classList.toggle('done');updateProgress()">✓</button></div>
+      <div class="step"><div class="step-num"></div><div class="step-text"><div class="step-name">Scan corporel relaxant</div><div class="step-detail">5 min · Avant le coucher</div></div><button class="step-check" onclick="this.classList.toggle('done');updateProgress()">✓</button></div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+    <div class="progress-text" id="progText">0 / 3 complétées</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <p class="section-title">Bibliothèque de protocoles</p>
+  <div class="protos-list" id="protosList">
+
+    <div class="proto-card cat-stress" data-cat="stress">
+      <div class="proto-top"><span class="proto-cat">Stress</span><span class="proto-duration">5 min</span></div>
+      <div class="proto-icon">🧘</div>
+      <div class="proto-title">Respiration 4-7-8</div>
+      <div class="proto-desc">Inspirez 4s, retenez 7s, expirez 8s. Technique validée pour réduire le cortisol et activer le système parasympathique.</div>
+      <div class="proto-meta"><span class="proto-tag">Anti-stress</span><span class="proto-tag">Débutant</span></div>
+      <button class="proto-btn">Lancer le protocole</button>
+    </div>
+
+    <div class="proto-card cat-stress" data-cat="stress">
+      <div class="proto-top"><span class="proto-cat">Stress</span><span class="proto-duration">3 min</span></div>
+      <div class="proto-icon">🫁</div>
+      <div class="proto-title">Cohérence cardiaque</div>
+      <div class="proto-desc">6 respirations par minute pendant 3 min. Synchronise le rythme cardiaque et calme le système nerveux.</div>
+      <div class="proto-meta"><span class="proto-tag">Rapide</span><span class="proto-tag">Validé cliniquement</span></div>
+      <button class="proto-btn">Lancer le protocole</button>
+    </div>
+
+    <div class="proto-card cat-sommeil" data-cat="sommeil">
+      <div class="proto-top"><span class="proto-cat">Sommeil</span><span class="proto-duration">10 min</span></div>
+      <div class="proto-icon">🌙</div>
+      <div class="proto-title">Routine pré-sommeil</div>
+      <div class="proto-desc">Scan corporel progressif + respiration lente. Prépare le corps au sommeil profond en réduisant l'activation corticale.</div>
+      <div class="proto-meta"><span class="proto-tag">Soir</span><span class="proto-tag">Relaxation</span></div>
+      <button class="proto-btn">Lancer le protocole</button>
+    </div>
+
+    <div class="proto-card cat-sommeil" data-cat="sommeil">
+      <div class="proto-top"><span class="proto-cat">Sommeil</span><span class="proto-duration">2 min</span></div>
+      <div class="proto-icon">📱</div>
+      <div class="proto-title">Digital sunset</div>
+      <div class="proto-desc">Checklist en 2 min pour couper les écrans : mode nuit, notifications off, alarme configurée.</div>
+      <div class="proto-meta"><span class="proto-tag">Habitude</span><span class="proto-tag">Facile</span></div>
+      <button class="proto-btn">Lancer le protocole</button>
+    </div>
+
+    <div class="proto-card cat-energie" data-cat="energie">
+      <div class="proto-top"><span class="proto-cat">Énergie</span><span class="proto-duration">7 min</span></div>
+      <div class="proto-icon">⚡</div>
+      <div class="proto-title">Activation matinale</div>
+      <div class="proto-desc">Séquence de mouvements dynamiques pour relancer la circulation et booster l'énergie dès le réveil.</div>
+      <div class="proto-meta"><span class="proto-tag">Matin</span><span class="proto-tag">Mouvement</span></div>
+      <button class="proto-btn">Lancer le protocole</button>
+    </div>
+
+    <div class="proto-card cat-energie" data-cat="energie">
+      <div class="proto-top"><span class="proto-cat">Énergie</span><span class="proto-duration">15 min</span></div>
+      <div class="proto-icon">🚶</div>
+      <div class="proto-title">Marche active</div>
+      <div class="proto-desc">15 min de marche rapide. Augmente l'énergie de 20% et améliore la concentration pour les 2h suivantes.</div>
+      <div class="proto-meta"><span class="proto-tag">Extérieur</span><span class="proto-tag">Cardio léger</span></div>
+      <button class="proto-btn">Lancer le protocole</button>
+    </div>
+
+    <div class="proto-card cat-focus" data-cat="focus">
+      <div class="proto-top"><span class="proto-cat">Focus</span><span class="proto-duration">5 min</span></div>
+      <div class="proto-icon">🧠</div>
+      <div class="proto-title">Reset mental</div>
+      <div class="proto-desc">Micro-méditation de recentrage. Idéale entre deux tâches pour retrouver la clarté mentale.</div>
+      <div class="proto-meta"><span class="proto-tag">Journée</span><span class="proto-tag">Méditation</span></div>
+      <button class="proto-btn">Lancer le protocole</button>
+    </div>
+
+    <div class="proto-card cat-focus" data-cat="focus">
+      <div class="proto-top"><span class="proto-cat">Focus</span><span class="proto-duration">2 min</span></div>
+      <div class="proto-icon">💧</div>
+      <div class="proto-title">Hydratation check</div>
+      <div class="proto-desc">Rappel structuré : buvez 250ml, notez votre niveau. L'hydratation impacte directement la concentration.</div>
+      <div class="proto-meta"><span class="proto-tag">Micro-habitude</span><span class="proto-tag">Rapide</span></div>
+      <button class="proto-btn">Lancer le protocole</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <p class="section-title">Navigation</p>
+  <div class="nav-cards">
+    <a href="./pulse.html" class="nav-card"><span class="nav-card-icon">💚</span><span class="nav-card-name">Pulse</span><span class="nav-card-arrow">→ Score du jour</span></a>
+    <a href="./analyse.html" class="nav-card"><span class="nav-card-icon">📊</span><span class="nav-card-name">Analyse</span><span class="nav-card-arrow">→ Tendances 7j</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Soma</div>
+  <p class="footer-text">Votre OS de santé personnel.</p>
+  <div class="footer-links"><a href="./pulse.html">Pulse</a><a href="./analyse.html">Analyse</a><a href="#">Support</a></div>
+</footer>
+
+</main>
+
+<script>
+document.querySelectorAll('.filter-tab').forEach(function(t){
+  t.onclick=function(){
+    document.querySelectorAll('.filter-tab').forEach(function(b){b.classList.remove('active');});
+    t.classList.add('active');
+    var c=t.dataset.cat;
+    document.querySelectorAll('.proto-card').forEach(function(p){
+      p.style.display=(c==='all'||p.dataset.cat===c)?'':'none';
+    });
+  };
+});
+function updateProgress(){
+  var done=document.querySelectorAll('.step-check.done').length;
+  document.getElementById('progFill').style.width=Math.round(done/3*100)+'%';
+  document.getElementById('progText').textContent=done+' / 3 complétées';
+}
+</script>
+</body>
+</html>
