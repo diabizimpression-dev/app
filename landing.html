@@ -401,28 +401,44 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
 <script>
 (function(){
   var R={
-    'MEDVi':'SOMa','MEDVI':'SOMA','medvi':'soma','Medvi':'Soma',
-    'Take the quiz':'Découvrir mon score','Take The Quiz':'Découvrir mon score',
-    'Healthcare,':'Soins de santé,',
-    'for real life.':'pour la vie réelle.',
-    'We provide medical care online—simple, direct, and led by licensed providers. No waiting rooms. No unnecessary steps. Just care that works.':
-      'Nous offrons des soins de santé en ligne : simples, directs et assurés par des professionnels agréés. Pas de salle d’attente. Des soins efficaces, tout simplement.',
-    'Weight Loss':'Perte de poids',
-    'Peptides & Longevity':'Peptides et longévité',
-    "Men's Health":'Santé masculine',
-    "Women's Health":'Santé des femmes',
-    'DOCTOR-GUIDED GLP-1 CARE':'SOINS GLP-1 SOUS CONTRÔLE MÉDICAL',
-    'Weight loss made easy':'Perdre du poids en toute simplicité',
-    'with personalized care':'grâce à un suivi personnalisé',
-    'CLEAR PRICING':'TARIFICATION TRANSPARENTE',
-    'SHIPPED TO YOUR DOOR':'LIVRAISON À DOMICILE',
-    'LICENSED MEDICAL PROVIDERS':'PRESTATAIRES DE SOINS MÉDICAUX AGRÉÉS',
-    '100% ONLINE':'100% EN LIGNE',
-    'Learn more':'En savoir plus',
-    'Get started':'Commencer',
-    'Book a consultation':'Réserver une consultation',
-    'See all treatments':'Voir tous les traitements',
-    'patients':'utilisateurs'
+    ‘MEDVi’:’SOMa’,’MEDVI’:’SOMA’,’medvi’:’soma’,’Medvi’:’Soma’,
+    ‘Take the quiz’:’Découvrir mon score’,’Take The Quiz’:’Découvrir mon score’,
+    ‘Healthcare,’:’Soins de santé,’,
+    ‘for real life.’:’pour la vie réelle.’,
+    ‘Weight Loss’:’Perte de poids’,’Weight loss’:’Perte de poids’,
+    ‘Peptides & Longevity’:’Peptides et longévité’,
+    "Men’s Health":’Santé masculine’,"Men’s health":’Santé masculine’,
+    "Women’s Health":’Santé des femmes’,"Women’s health":’Santé des femmes’,
+    ‘MEDVi Meals’:’Repas SOMa’,’Repas MEDVi’:’Repas SOMa’,
+    ‘Supplements’:’Suppléments’,
+    ‘Hair Regrowth’:’Repousse des cheveux’,’repousse des cheveux’:’Repousse des cheveux’,
+    ‘Skin Care’:’Soins de la peau’,’Soins de la peau’:’Soins de la peau’,
+    ‘Care Coaching’:’Coaching en soins’,
+    ‘Our Doctors’:’Nos médecins’,’Nos médecins’:’Nos médecins’,
+    ‘Testimonials’:’Témoignages’,’Témoignages’:’Témoignages’,
+    ‘Contact Support’:’Contacter l\’assistance’,
+    ‘About Us’:’À propos de nous’,
+    ‘DOCTOR-GUIDED GLP-1 CARE’:’SOINS GLP-1 SOUS CONTRÔLE MÉDICAL’,
+    ‘Weight loss made easy’:’Perdre du poids facilement’,
+    ‘made easy’:’en toute simplicité’,
+    ‘with personalized care’:’grâce à un suivi personnalisé’,
+    ‘CLEAR PRICING’:’TARIFICATION TRANSPARENTE’,
+    ‘SHIPPED TO YOUR DOOR’:’LIVRAISON À DOMICILE’,
+    ‘LICENSED MEDICAL PROVIDERS’:’PRESTATAIRES MÉDICAUX AGRÉÉS’,
+    ‘100% ONLINE’:’100% EN LIGNE’,
+    ‘Learn more’:’En savoir plus’,’Learn More’:’En savoir plus’,
+    ‘Get started’:’Commencer’,’Get Started’:’Commencer’,
+    ‘Book a consultation’:’Réserver une consultation’,
+    ‘See all treatments’:’Voir tous les traitements’,
+    ‘patients’:’utilisateurs’,
+    ‘We provide medical care online’:’Nous offrons des soins en ligne’,
+    ‘simple, direct, and led by licensed providers.’:’simples, directs et assurés par des professionnels agréés.’,
+    ‘No waiting rooms.’:’Pas de salle d\’attente.’,
+    ‘No unnecessary steps.’:’Pas de démarches inutiles.’,
+    ‘Just care that works.’:’Des soins efficaces, tout simplement.’,
+    ‘View all’:’Voir tout’,’Read more’:’Lire plus’,
+    ‘Start now’:’Commencer maintenant’,
+    ‘Join’:’Rejoignez’,’500,000+’:’plus de 500 000’
   };
   function rebrand(){
     if(!document.body)return;
@@ -447,12 +463,22 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
       var s=img.closest('[data-framer-name*="Logo"],a[href="/"],a[href="./"]');
       if(s){img.dataset.somaLogo='1';img.src='./assets/logo-soma-white.svg';img.alt='SOMa';img.style.height='32px'}
     });
-    // Nav logo fallback: first img in nav area
-    document.querySelectorAll('.framer-nafge3 img, [data-framer-name="Logo"] img').forEach(function(img){
+    // Nav logo fallback: all logo images anywhere
+    document.querySelectorAll('.framer-nafge3 img, [data-framer-name="Logo"] img, [data-framer-name*="logo"] img, a[href="./"] img, a[href="/"] img').forEach(function(img){
       if(img.dataset.somaLogo)return;
       img.dataset.somaLogo='1';img.src='./assets/logo-soma-white.svg';img.alt='SOMa';img.style.height='32px';
       var p=img.closest('[style*="filter"]');
       if(p){p.style.filter='none';p.style.webkitFilter='none'}
+    });
+    // Mobile menu overlay logo (dark bg with MEDVi)
+    document.querySelectorAll('[data-framer-name*="Nav"] img, [data-framer-name*="nav"] img, [class*="framer-"] img').forEach(function(img){
+      if(img.dataset.somaLogo)return;
+      var src=img.getAttribute('src')||'';
+      if(src.indexOf('framerusercontent')!==-1 && img.closest('nav,header,[data-framer-name*="Nav"],[data-framer-name*="nav"],[class*="navbar"]')){
+        img.dataset.somaLogo='1';img.src='./assets/logo-soma-dark.svg';img.alt='SOMa';img.style.height='32px';
+        var p=img.closest('[style*="filter"]');
+        if(p){p.style.filter='none';p.style.webkitFilter='none'}
+      }
     });
   }
   var runs=0,iv=setInterval(function(){rebrand();if(++runs>30)clearInterval(iv)},250);
