@@ -398,5 +398,60 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
   },500);
 })();
 </script>
+<script>
+(function(){
+  function rebrand(){
+    // Replace all visible MEDVi text in the DOM
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);
+    while(walker.nextNode()){
+      var n=walker.currentNode;
+      if(n.nodeValue.indexOf('MEDVi')!==-1) n.nodeValue=n.nodeValue.replace(/MEDVi/g,'SOMa');
+      if(n.nodeValue.indexOf('MEDVI')!==-1) n.nodeValue=n.nodeValue.replace(/MEDVI/g,'SOMA');
+      if(n.nodeValue.indexOf('medvi')!==-1) n.nodeValue=n.nodeValue.replace(/medvi/g,'soma');
+      // Replace English content with SOMa branding
+      if(n.nodeValue.indexOf('Healthcare,')!==-1) n.nodeValue=n.nodeValue.replace('Healthcare,','Soins de santé,');
+      if(n.nodeValue.indexOf('redefined')!==-1) n.nodeValue=n.nodeValue.replace('redefined','redéfini');
+      if(n.nodeValue.indexOf('for real life.')!==-1) n.nodeValue=n.nodeValue.replace('for real life.','pour la vie réelle.');
+      if(n.nodeValue.indexOf('Join')!==-1&&n.nodeValue.indexOf('patients')!==-1) n.nodeValue=n.nodeValue.replace(/Join\s/,'Rejoignez ').replace('patients','utilisateurs de SOMa');
+      if(n.nodeValue.indexOf('Take the quiz')!==-1) n.nodeValue=n.nodeValue.replace(/Take the quiz/g,'Découvrir mon score');
+    }
+    // Replace logo image with SOMa text
+    var logoImgs=document.querySelectorAll('img[src*="MEDVi"],img[src*="medvi"],img[alt*="MEDVi"],img[alt*="medvi"]');
+    logoImgs.forEach(function(img){
+      var s=document.createElement('span');
+      s.textContent='SOMa';
+      s.style.cssText='font-family:Montserrat,sans-serif;font-weight:800;font-size:28px;color:inherit;letter-spacing:-0.5px';
+      img.parentNode.replaceChild(s,img);
+    });
+    // Also catch logos by filter:invert style (Framer logo pattern)
+    document.querySelectorAll('[style*="filter:invert"]').forEach(function(el){
+      var img=el.querySelector('img');
+      if(img){
+        var s=document.createElement('span');
+        s.textContent='SOMa';
+        s.style.cssText='font-family:Montserrat,sans-serif;font-weight:800;font-size:28px;color:white;letter-spacing:-0.5px';
+        el.innerHTML='';
+        el.appendChild(s);
+        el.style.display='flex';
+        el.style.alignItems='center';
+      }
+    });
+  }
+  // Run repeatedly to catch Framer hydration
+  var runs=0;
+  var iv=setInterval(function(){
+    rebrand();
+    runs++;
+    if(runs>20)clearInterval(iv);
+  },300);
+  // Also run on DOMContentLoaded and load
+  document.addEventListener('DOMContentLoaded',rebrand);
+  window.addEventListener('load',function(){rebrand();setTimeout(rebrand,1000);setTimeout(rebrand,3000)});
+  // MutationObserver to catch dynamic changes
+  var obs=new MutationObserver(function(){rebrand()});
+  obs.observe(document.body||document.documentElement,{childList:true,subtree:true});
+  setTimeout(function(){obs.disconnect()},15000);
+})();
+</script>
 </body>
 </html>
