@@ -409,17 +409,16 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
     'Peptides & Longevity':'Peptides et longévité',
     "Men's Health":'Santé masculine',"Men's health":'Santé masculine',
     "Women's Health":'Santé des femmes',"Women's health":'Santé des femmes',
-    'MEDVi Meals':'Repas SOMa','Repas MEDVi':'Repas SOMa',
-    'Supplements':'Suppléments',
-    'Hair Regrowth':'Repousse des cheveux','repousse des cheveux':'Repousse des cheveux',
-    'Skin Care':'Soins de la peau','Soins de la peau':'Soins de la peau',
+    'MEDVi Meals':'Repas SOMa','SOMa Meals':'Repas SOMa','Repas MEDVi':'Repas SOMa',
+    'Supplements':'Suppléments','Skincare':'Soins de la peau',
+    'Hair Regrowth':'Repousse des cheveux',
     'Care Coaching':'Coaching en soins',
-    'Our Doctors':'Nos médecins','Nos médecins':'Nos médecins',
-    'Testimonials':'Témoignages','Témoignages':'Témoignages',
+    'Our Doctors':'Nos médecins',
+    'Testimonials':'Témoignages',
     'Contact Support':"Contacter l'assistance",
     'About Us':"À propos de nous",
     'DOCTOR-GUIDED GLP-1 CARE':'SOINS GLP-1 SOUS CONTRÔLE MÉDICAL',
-    'Weight loss made easy':'Perdre du poids facilement',
+    'Weight loss made easy':'Perte de poids en toute simplicité',
     'made easy':'en toute simplicité',
     'with personalized care':'grâce à un suivi personnalisé',
     'CLEAR PRICING':'TARIFICATION TRANSPARENTE',
@@ -431,63 +430,86 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
     'Book a consultation':'Réserver une consultation',
     'See all treatments':'Voir tous les traitements',
     'patients':'utilisateurs',
-    'We provide medical care online':'Nous offrons des soins en ligne',
-    'simple, direct, and led by licensed providers.':'simples, directs et assurés par des professionnels agréés.',
     'No waiting rooms.':"Pas de salle d'attente.",
     'No unnecessary steps.':"Pas de démarches inutiles.",
     'Just care that works.':"Des soins efficaces, tout simplement.",
     'View all':'Voir tout','Read more':'Lire plus',
     'Start now':'Commencer maintenant',
-    'Join':'Rejoignez','500,000+':'plus de 500 000'
+    'Join':'Rejoignez','500,000+':'plus de 500 000',
+    'Everything you need':'Tout ce dont vous avez besoin',
+    'included:':'inclus :',
+    'Prescription to fast, effective GLP-1':'Prescription GLP-1 rapide et efficace',
+    '1:1 physician guidance':'Suivi médecin 1:1',
+    '24/7 support':'Support 24/7',
+    'Weight loss guarantee':'Garantie perte de poids',
+    'Fast & discreet shipping':'Livraison rapide et discrète',
+    'Everything,':'Tout,',
+    'all in one place':'en un seul endroit',
+    'Track your progress, check in with your provider, and manage your care in your all-in-one patient portal':"Suivez vos progrès, consultez votre médecin et gérez vos soins dans votre portail patient tout-en-un",
+    'Unlimited':'Illimité',
+    'Medical support continues throughout your care, whenever you need it':"Le support médical vous accompagne tout au long de votre parcours",
+    'A smarter approach to weight loss, built around you':"Une approche intelligente de la perte de poids, conçue pour vous",
+    'Find the right GLP-1 medication with the confidence that comes from knowing it is doctor-approved and budget-friendly.':"Trouvez le bon traitement GLP-1 avec la confiance d'un suivi médical approuvé et accessible.",
+    'CARE DESIGNED FOR':'SOINS CONÇUS POUR',
+    'Whole-body':'Un soin global',
+    'care for her':'pour elle',
+    'balance, vitality, and confidence':'équilibre, vitalité et confiance',
+    'Prescriptions are issued only after an':'Les prescriptions ne sont délivrées qu\'après une',
+    'online':'en ligne',
+    'consultation with an independent licensed provider.':'consultation avec un professionnel de santé agréé.',
+    'Compound medications are dispensed by state-licensed pharmacies but are not FDA approved.':'Les médicaments composés sont distribués par des pharmacies agréées.',
+    'redefined':'redéfini',
+    'We provide medical care online':'Nous offrons des soins en ligne',
+    'simple, direct, and led by licensed providers.':'simples, directs et assurés par des professionnels agréés.'
   };
+  var busy=false;
   function rebrand(){
-    if(!document.body)return;
-    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);
-    while(w.nextNode()){
-      var n=w.currentNode,v=n.nodeValue;
-      for(var k in R){if(v.indexOf(k)!==-1){n.nodeValue=v=v.split(k).join(R[k])}}
-      if(v.indexOf('redefined')!==-1) n.nodeValue=v=v.replace('redefined','redéfini');
-      if(v.indexOf('Join ')!==-1) n.nodeValue=v.replace('Join ','Rejoignez ');
-    }
-    // Replace logo: any img inside a filter:invert container (Framer navbar logo)
-    document.querySelectorAll('[style*="filter:invert"],[style*="-webkit-filter:invert"]').forEach(function(el){
-      if(el.dataset.somaLogo)return;
-      el.dataset.somaLogo='1';
-      el.innerHTML='<img src="./assets/logo-soma-white.svg" alt="SOMa" style="height:32px;width:auto">';
-      el.style.filter='none';el.style.webkitFilter='none';
-      el.style.display='flex';el.style.alignItems='center';
-    });
-    // Footer logo (no invert, dark bg)
-    document.querySelectorAll('footer img, [data-framer-name*="Footer"] img, [data-framer-name*="footer"] img').forEach(function(img){
-      if(img.dataset.somaLogo)return;
-      var s=img.closest('[data-framer-name*="Logo"],a[href="/"],a[href="./"]');
-      if(s){img.dataset.somaLogo='1';img.src='./assets/logo-soma-white.svg';img.alt='SOMa';img.style.height='32px'}
-    });
-    // Nav logo fallback: all logo images anywhere
-    document.querySelectorAll('.framer-nafge3 img, [data-framer-name="Logo"] img, [data-framer-name*="logo"] img, a[href="./"] img, a[href="/"] img').forEach(function(img){
-      if(img.dataset.somaLogo)return;
-      img.dataset.somaLogo='1';img.src='./assets/logo-soma-white.svg';img.alt='SOMa';img.style.height='32px';
-      var p=img.closest('[style*="filter"]');
-      if(p){p.style.filter='none';p.style.webkitFilter='none'}
-    });
-    // Mobile menu overlay logo (dark bg with MEDVi)
-    document.querySelectorAll('[data-framer-name*="Nav"] img, [data-framer-name*="nav"] img, [class*="framer-"] img').forEach(function(img){
-      if(img.dataset.somaLogo)return;
-      var src=img.getAttribute('src')||'';
-      if(src.indexOf('framerusercontent')!==-1 && img.closest('nav,header,[data-framer-name*="Nav"],[data-framer-name*="nav"],[class*="navbar"]')){
-        img.dataset.somaLogo='1';img.src='./assets/logo-soma-dark.svg';img.alt='SOMa';img.style.height='32px';
-        var p=img.closest('[style*="filter"]');
-        if(p){p.style.filter='none';p.style.webkitFilter='none'}
+    if(!document.body||busy)return;
+    busy=true;
+    try{
+      var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);
+      while(w.nextNode()){
+        var n=w.currentNode,v=n.nodeValue;
+        if(!v||!v.trim())continue;
+        var changed=false;
+        for(var k in R){if(v.indexOf(k)!==-1){v=v.split(k).join(R[k]);changed=true}}
+        if(changed)n.nodeValue=v;
       }
-    });
+      // Replace ALL logo images from framerusercontent
+      document.querySelectorAll('img').forEach(function(img){
+        var src=img.getAttribute('src')||'';
+        if(src.indexOf('framerusercontent')!==-1){
+          var w=img.naturalWidth||img.width||0,h=img.naturalHeight||img.height||0;
+          var ratio=w&&h?w/h:0;
+          // Logo images have wide aspect ratio (>2) and are small
+          if((ratio>2||img.closest('[data-framer-name*="Logo"],[data-framer-name*="logo"],a[href="/"],a[href="./"]'))&&h<80){
+            if(img.dataset.sl)return;
+            img.dataset.sl='1';
+            // Check if on dark or light background
+            var bg=window.getComputedStyle(img.closest('[style*="background"]')||document.body).backgroundColor;
+            var isDark=!bg||bg==='rgba(0, 0, 0, 0)'||bg.indexOf('255')===-1;
+            img.src=isDark?'./assets/logo-soma-white.svg':'./assets/logo-soma-dark.svg';
+            img.alt='SOMa';img.style.height='32px';img.style.width='auto';
+            var p=img.closest('[style*="filter"]');
+            if(p){p.style.filter='none';p.style.webkitFilter='none'}
+          }
+        }
+      });
+    }catch(e){}
+    busy=false;
   }
-  var runs=0,iv=setInterval(function(){rebrand();if(++runs>30)clearInterval(iv)},250);
+  // Run on interval - never stop (Framer re-renders constantly)
+  setInterval(rebrand,400);
   document.addEventListener('DOMContentLoaded',rebrand);
-  window.addEventListener('load',function(){rebrand();setTimeout(rebrand,500);setTimeout(rebrand,1500);setTimeout(rebrand,4000)});
-  var obs=new MutationObserver(rebrand);
-  if(document.body)obs.observe(document.body,{childList:true,subtree:true});
-  else document.addEventListener('DOMContentLoaded',function(){obs.observe(document.body,{childList:true,subtree:true})});
-  setTimeout(function(){obs.disconnect()},20000);
+  window.addEventListener('load',function(){rebrand();setTimeout(rebrand,500);setTimeout(rebrand,2000)});
+  // MutationObserver with debounce - NEVER disconnect
+  var timer=null;
+  var obs=new MutationObserver(function(){
+    clearTimeout(timer);
+    timer=setTimeout(rebrand,50);
+  });
+  if(document.body)obs.observe(document.body,{childList:true,subtree:true,characterData:true});
+  else document.addEventListener('DOMContentLoaded',function(){obs.observe(document.body,{childList:true,subtree:true,characterData:true})});
 })();
 </script>
 </body>
