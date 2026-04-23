@@ -400,57 +400,68 @@ redefined for real life." data-framer-component-type="RichTextContainer" style="
 </script>
 <script>
 (function(){
+  var R={
+    'MEDVi':'SOMa','MEDVI':'SOMA','medvi':'soma','Medvi':'Soma',
+    'Take the quiz':'Découvrir mon score','Take The Quiz':'Découvrir mon score',
+    'Healthcare,':'Soins de santé,',
+    'for real life.':'pour la vie réelle.',
+    'We provide medical care online—simple, direct, and led by licensed providers. No waiting rooms. No unnecessary steps. Just care that works.':
+      'Nous offrons des soins de santé en ligne : simples, directs et assurés par des professionnels agréés. Pas de salle d’attente. Des soins efficaces, tout simplement.',
+    'Weight Loss':'Perte de poids',
+    'Peptides & Longevity':'Peptides et longévité',
+    "Men's Health":'Santé masculine',
+    "Women's Health":'Santé des femmes',
+    'DOCTOR-GUIDED GLP-1 CARE':'SOINS GLP-1 SOUS CONTRÔLE MÉDICAL',
+    'Weight loss made easy':'Perdre du poids en toute simplicité',
+    'with personalized care':'grâce à un suivi personnalisé',
+    'CLEAR PRICING':'TARIFICATION TRANSPARENTE',
+    'SHIPPED TO YOUR DOOR':'LIVRAISON À DOMICILE',
+    'LICENSED MEDICAL PROVIDERS':'PRESTATAIRES DE SOINS MÉDICAUX AGRÉÉS',
+    '100% ONLINE':'100% EN LIGNE',
+    'Learn more':'En savoir plus',
+    'Get started':'Commencer',
+    'Book a consultation':'Réserver une consultation',
+    'See all treatments':'Voir tous les traitements',
+    'patients':'utilisateurs'
+  };
   function rebrand(){
-    // Replace all visible MEDVi text in the DOM
-    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);
-    while(walker.nextNode()){
-      var n=walker.currentNode;
-      if(n.nodeValue.indexOf('MEDVi')!==-1) n.nodeValue=n.nodeValue.replace(/MEDVi/g,'SOMa');
-      if(n.nodeValue.indexOf('MEDVI')!==-1) n.nodeValue=n.nodeValue.replace(/MEDVI/g,'SOMA');
-      if(n.nodeValue.indexOf('medvi')!==-1) n.nodeValue=n.nodeValue.replace(/medvi/g,'soma');
-      // Replace English content with SOMa branding
-      if(n.nodeValue.indexOf('Healthcare,')!==-1) n.nodeValue=n.nodeValue.replace('Healthcare,','Soins de santé,');
-      if(n.nodeValue.indexOf('redefined')!==-1) n.nodeValue=n.nodeValue.replace('redefined','redéfini');
-      if(n.nodeValue.indexOf('for real life.')!==-1) n.nodeValue=n.nodeValue.replace('for real life.','pour la vie réelle.');
-      if(n.nodeValue.indexOf('Join')!==-1&&n.nodeValue.indexOf('patients')!==-1) n.nodeValue=n.nodeValue.replace(/Join\s/,'Rejoignez ').replace('patients','utilisateurs de SOMa');
-      if(n.nodeValue.indexOf('Take the quiz')!==-1) n.nodeValue=n.nodeValue.replace(/Take the quiz/g,'Découvrir mon score');
+    if(!document.body)return;
+    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null,false);
+    while(w.nextNode()){
+      var n=w.currentNode,v=n.nodeValue;
+      for(var k in R){if(v.indexOf(k)!==-1){n.nodeValue=v=v.split(k).join(R[k])}}
+      if(v.indexOf('redefined')!==-1) n.nodeValue=v=v.replace('redefined','redéfini');
+      if(v.indexOf('Join ')!==-1) n.nodeValue=v.replace('Join ','Rejoignez ');
     }
-    // Replace logo image with SOMa text
-    var logoImgs=document.querySelectorAll('img[src*="MEDVi"],img[src*="medvi"],img[alt*="MEDVi"],img[alt*="medvi"]');
-    logoImgs.forEach(function(img){
-      var s=document.createElement('span');
-      s.textContent='SOMa';
-      s.style.cssText='font-family:Montserrat,sans-serif;font-weight:800;font-size:28px;color:inherit;letter-spacing:-0.5px';
-      img.parentNode.replaceChild(s,img);
+    // Replace logo: any img inside a filter:invert container (Framer navbar logo)
+    document.querySelectorAll('[style*="filter:invert"],[style*="-webkit-filter:invert"]').forEach(function(el){
+      if(el.dataset.somaLogo)return;
+      el.dataset.somaLogo='1';
+      el.innerHTML='<img src="./assets/logo-soma-white.svg" alt="SOMa" style="height:32px;width:auto">';
+      el.style.filter='none';el.style.webkitFilter='none';
+      el.style.display='flex';el.style.alignItems='center';
     });
-    // Also catch logos by filter:invert style (Framer logo pattern)
-    document.querySelectorAll('[style*="filter:invert"]').forEach(function(el){
-      var img=el.querySelector('img');
-      if(img){
-        var s=document.createElement('span');
-        s.textContent='SOMa';
-        s.style.cssText='font-family:Montserrat,sans-serif;font-weight:800;font-size:28px;color:white;letter-spacing:-0.5px';
-        el.innerHTML='';
-        el.appendChild(s);
-        el.style.display='flex';
-        el.style.alignItems='center';
-      }
+    // Footer logo (no invert, dark bg)
+    document.querySelectorAll('footer img, [data-framer-name*="Footer"] img, [data-framer-name*="footer"] img').forEach(function(img){
+      if(img.dataset.somaLogo)return;
+      var s=img.closest('[data-framer-name*="Logo"],a[href="/"],a[href="./"]');
+      if(s){img.dataset.somaLogo='1';img.src='./assets/logo-soma-white.svg';img.alt='SOMa';img.style.height='32px'}
+    });
+    // Nav logo fallback: first img in nav area
+    document.querySelectorAll('.framer-nafge3 img, [data-framer-name="Logo"] img').forEach(function(img){
+      if(img.dataset.somaLogo)return;
+      img.dataset.somaLogo='1';img.src='./assets/logo-soma-white.svg';img.alt='SOMa';img.style.height='32px';
+      var p=img.closest('[style*="filter"]');
+      if(p){p.style.filter='none';p.style.webkitFilter='none'}
     });
   }
-  // Run repeatedly to catch Framer hydration
-  var runs=0;
-  var iv=setInterval(function(){
-    rebrand();
-    runs++;
-    if(runs>20)clearInterval(iv);
-  },300);
-  // Also run on DOMContentLoaded and load
+  var runs=0,iv=setInterval(function(){rebrand();if(++runs>30)clearInterval(iv)},250);
   document.addEventListener('DOMContentLoaded',rebrand);
-  window.addEventListener('load',function(){rebrand();setTimeout(rebrand,1000);setTimeout(rebrand,3000)});
-  // MutationObserver to catch dynamic changes
-  var obs=new MutationObserver(function(){rebrand()});
-  obs.observe(document.body||document.documentElement,{childList:true,subtree:true});
-  setTimeout(function(){obs.disconnect()},15000);
+  window.addEventListener('load',function(){rebrand();setTimeout(rebrand,500);setTimeout(rebrand,1500);setTimeout(rebrand,4000)});
+  var obs=new MutationObserver(rebrand);
+  if(document.body)obs.observe(document.body,{childList:true,subtree:true});
+  else document.addEventListener('DOMContentLoaded',function(){obs.observe(document.body,{childList:true,subtree:true})});
+  setTimeout(function(){obs.disconnect()},20000);
 })();
 </script>
 </body>
